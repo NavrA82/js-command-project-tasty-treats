@@ -1,8 +1,10 @@
 function theme() {
-  const checkbox = document.querySelector('.header-switch input[type="checkbox"]');
+  const checkbox = document.querySelector(
+    '.header-switch input[type="checkbox"]'
+  );
   const el = document.documentElement;
 
-    checkbox.addEventListener('change', () => {
+  checkbox.addEventListener('change', () => {
     if (el.hasAttribute('data-theme')) {
       el.removeAttribute('data-theme');
       localStorage.removeItem('theme');
@@ -12,20 +14,23 @@ function theme() {
     }
   });
 
-    function setThemeFromMediaQuery() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  function setThemeFromMediaQuery() {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
       el.setAttribute('data-theme', 'dark');
       checkbox.checked = true;
     }
   }
   if (localStorage.getItem('theme') !== null) {
-      el.setAttribute('data-theme', 'dark');
-      checkbox.checked = true;
-    } else {
-      setThemeFromMediaQuery();
-      updateThemeByTime();
-    }
-  
+    el.setAttribute('data-theme', 'dark');
+    checkbox.checked = true;
+  } else {
+    setThemeFromMediaQuery();
+    updateThemeByTime();
+  }
+
   function updateThemeByTime() {
     const currentHour = new Date().getHours();
     if (currentHour >= 18 || currentHour < 6) {
@@ -36,6 +41,6 @@ function theme() {
       checkbox.checked = false;
     }
   }
- }
+}
 
 theme();
