@@ -78,7 +78,7 @@ textarea:hover::placeholder {
   margin-bottom: 8px;
   font-size: 14px;
   line-height: 1.2;
-  color: rgba(5, 5, 5, 0.5);
+  color: rgba(5, 5, 5, 0.2);
 }
 
 .order-now-modal-form-input {
@@ -94,7 +94,7 @@ textarea:hover::placeholder {
   outline: none;
   width: 295px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.5);
+  border: 1px solid rgba(5, 5, 5, 0.2);
   transition: border-color 500ms;
 }
 
@@ -159,7 +159,7 @@ textarea:hover::placeholder {
   .order-now-modal-form textarea {
     width: 360px;
     border-radius: 15px;
-    border: 1px solid rgba(5, 5, 5, 0.5);
+    border: 1px solid rgba(5, 5, 5, 0.2);
   }
   .order-now-modal-form-input {
     height: 48px;
