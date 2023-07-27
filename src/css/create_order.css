@@ -73,6 +73,7 @@ body.show-modal-order-now .order-now-backdrop {
 input:hover::placeholder {
   color: #9bb537;
 }
+
 .order-now-modal-form label:not(:last-of-type) {
   margin-bottom: 16px;
 }
@@ -85,21 +86,24 @@ input:hover::placeholder {
   color: rgba(5, 5, 5, 0.5);
 }
 
-.order-now-modal-form__input {
+.order-now-modal-form-input {
+  outline: none;
+  border: none;
   padding-left: 10px;
   padding-right: 10px;
   height: 43px;
 }
 
-.order-now-modal-form input,
-textarea {
+.order-now-modal-form-input,
+.order-now-modal-form textarea {
   outline: none;
   width: 295px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
+  transition: border-color 500ms;
 }
 
-.order-now-modal-form__input:hover,
+.order-now-modal-form-input:hover,
 .order-now-modal-form textarea:hover {
   outline: none;
   border: 2px solid #9bb537;
@@ -110,7 +114,7 @@ textarea {
   padding: 15px;
   height: 100px;
   resize: none;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .order-now-modal-form button {
@@ -126,34 +130,40 @@ textarea {
 
 .order-now-modal-close-svg path {
   stroke: #050505;
-  transition: stroke var(--animation-set);
+  transition: stroke 250ms;
 }
 
 .order-now-modal-close-svg:hover path {
   stroke: #9bb537;
 }
+.order-now-modal-form-button-submit {
+  transition: color 500ms;
+}
 
+.order-now-modal-form-button-submit:is(:hover, :focus) {
+  color: #050505;
+}
 @media screen and (max-width: 320px) {
   .order-now-modal {
     width: calc(100% - 30px);
   }
   .order-now-modal-form input,
-  textarea {
+  .order-now-modal-form textarea {
     width: 100%;
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .order-now-modal {
     max-width: 440px;
     padding: 40px;
   }
   .order-now-modal-form input,
-  textarea {
+  .order-now-modal-form textarea {
     width: 360px;
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.2);
   }
-  .order-now-modal-form__input {
+  .order-now-modal-form-input {
     height: 48px;
   }
   .order-now-modal-close-svg {
