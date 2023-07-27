@@ -1,0 +1,135 @@
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 96dpi) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 1dppx) and (min-width: 375px) and (max-width: 768px) {
+  .hero-favorites {
+    width: 335px;
+    height: 516px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-335-1x_480.jpg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: fixed;
+    margin: auto;
+    margin-top: 42px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 375px) and (max-width: 768px) {
+  .hero-favorites {
+    width: 335px;
+    height: 516px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-335-2x_720.jpg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: fixed;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 96dpi) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 1dppx) and (min-width: 768px) and (max-width: 1199px) {
+  .hero-favorites {
+    width: 704px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-704-1x_480.jpg);
+    border-radius: 15px;
+    /* background-repeat: no-repeat; */
+    /* background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-top: 42px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1199px) {
+  .hero-favorites {
+    width: 704px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-704-2x_720.jpg);
+    border-radius: 15px;
+    /* background-repeat: no-repeat; */
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 1200px),
+  screen and (min-resolution: 96dpi) and (min-width: 1200px),
+  screen and (min-resolution: 1dppx) and (min-width: 1200px) {
+  .hero-favorites {
+    width: 1080px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-1080-1x_720.jpg);
+    border-radius: 15px;
+
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;  */
+    background-position: center;
+    margin-top: 42px;
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+  screen and (min-resolution: 192dpi) and (min-width: 1200px),
+  screen and (min-resolution: 2dppx) and (min-width: 1200px) {
+  .hero-favorites {
+    width: 1080px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card-favorites-hero-1080-2x_720.jpg);
+    border-radius: 15px;
+
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;  */
+    background-position: center;
+  }
+}
+
+.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+  gap: 18px;
+  padding-top: 64px;
+  padding-bottom: 32px;
+  padding-left: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  border-radius: 15px;
+  color: rgba(5, 5, 5, 0.3);
+}
+.scrollmenu a:hover {
+  background-color: #9bb537;
+}
+.categories {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+
+  

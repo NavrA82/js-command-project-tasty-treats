@@ -1,0 +1,490 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+/* .container-categories{
+  margin:0 auto;
+  width:1200px;
+  padding-top:94px;
+  padding-bottom:94px;
+} */
+.home-categories{
+    display:flex;
+    width:auto;
+    height:auto;
+    background:#fff;
+}
+.section-elements{
+    display:flex;
+    margin-left:100px;
+    margin-top:80px;
+    list-style:none;
+    
+}
+.photos{
+  display:flex;
+  list-style:none;
+}
+.all-categories{
+display:flex;
+width:176px;
+height:50px;
+border-radius:15px;
+border-width:1px;
+align-items:center;
+justify-content:center;
+background:#fff;
+font-family:Inter;
+font-weight:500;
+font-size:18px;
+line-height: 1.21;
+color:#050505 50%;
+}
+
+.nav-scroller{
+  overflow-y: auto;
+ background-color: #fff;
+box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+width:235px;
+height:416px;
+margin-top:30px;
+margin-left:75px;
+gap:58px;
+font-family:Inter;
+font-weight:500;
+font-size:16px;
+line-height: 20px;
+color:#050505 50%;
+
+}
+
+  .nav-scroller__item {
+ color:#050505 30%;
+    display: flex;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+   text-align:left;
+  }
+  .nav-scroller__item:not(:last-child) {
+    border-right: 1px solid #eee;
+  }
+  .nav-scroller__item_active {
+    background-color:#9BB537;
+  }
+  .nav-scroller__item:not(.nav-scroller__item_active):hover {
+    background-color:#9BB537;
+  }
+  /* для активного пункта */
+  .nav-scroller__item_active:hover {
+    background-color: #fff176;
+  }
+  .load-more{
+    display:flex;
+    width:200px;
+    height:60px;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    border-radius:4px;
+    border:none;
+    background:green;
+  }
+  
+  .is-hidden{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    
+  }
+  
+  .pagination-wrapper{
+    display:flex;
+    width:100%;
+   justify-content:center;
+   align-items:center;
+   /*margin-top:64px;*/
+   /*margin-bottom:40px;*/
+  }
+  .photo-card{
+    position:relative;
+    display:flex;
+    
+  }
+  .picture{
+    display:flex;
+    width:250px;
+    height:287px;
+    border-radius:8px;
+   object-fit:cover;
+  }
+  .pictures-gallery{
+   
+    display:flex;
+    width:auto;
+    height:auto;
+    column-gap: 16px;
+    row-gap:32px;
+    list-style:none;
+    margin-left:64px;
+    margin-top:75px;
+    /*align-items:flex-end;*/
+    flex-wrap:wrap;
+  }
+  .section-elements>.plug{
+     display:flex;
+    width:auto;
+    height:auto;
+    align-items:center;
+    justify-content:center;
+   
+  }
+  
+.picture-pool{
+ 
+  display:flex;
+ 
+}
+  .icon-plug{
+    display:flex;
+    width:97px;
+    height:83px;
+   /* margin-left:50%;*/
+  }
+  .plug-text{
+    display:flex;
+   /* margin-left:20%;*/
+  }
+  .icon-plug{
+    display:flex;
+    width:97px;
+    height:83px;
+  }
+  .plug-text{
+    display:flex;
+    width:240px;
+    height:72px;
+    margin-top:32px;
+  }
+ .photo-card .card-title{
+    /* bANANA pANCAKES */
+position: absolute;
+width: 240px;
+height: 18px;
+left: 16px;
+top: 146px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 1.3;
+/* identical to box height, or 129% */
+text-align: center;
+text-transform: uppercase;
+
+color: #F8F8F8;
+
+  }
+ .photo-card .recipe-description{
+display:flex;
+/* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
+
+position: absolute;
+width: 218px;
+height: 32px;
+left: 16px;
+top: 192px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.3;
+/* or 133% */
+
+color: #F8F8F8;
+outline: none;
+overflow: hidden;
+
+  }
+  .photo-card .rating-list{
+    position:absolute;
+    display:flex;
+  list-style:none;
+  
+  }
+  .button-text{
+    display:flex;
+   padding-left:-16px;
+   
+  }
+  
+  .photo-card .star-rating{
+    display:flex;
+    
+  }
+  .photo-card .get-recipes{
+    position:absolute;
+  
+    top:240px;
+    left:147px;
+ /* btn */
+
+/* Auto layout */
+
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 16px;
+padding-right:48px;
+padding-bottom: 16px;
+padding-left:48px;
+background: #9BB537;
+border-radius: 8px;
+color: #F8F8F8;
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-style:normal;
+/* Inside auto layout */
+
+border:none;
+
+/* See recipe */
+
+width: 61px;
+height: 15px;
+
+font-size: 12px;
+line-height: 1.25;
+/* identical to box height */
+
+color: #F8F8F8;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+  }
+  .photo-card .stars{
+    position:absolute;
+    display:flex;
+    
+/*    width:90px;
+    height:18px;
+    top:234px;
+    left:16px;
+    /* stars */
+
+/* Auto layout */
+/*display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+width: 90px;
+height: 18px;
+
+
+/* Inside auto layout */
+/*flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Star 1 */
+
+/*width: 18px;
+height: 18px;
+
+background: #EEA10C;
+border-radius: 1px;
+
+/* Inside auto layout */
+/*flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Star 2 */
+
+/*width: 18px;
+height: 18px;
+
+background: #EEA10C;
+border-radius: 1px;
+
+/* Inside auto layout */
+/*flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Star 3 */
+
+/*width: 18px;
+height: 18px;
+
+background: #EEA10C;
+border-radius: 1px;
+
+/* Inside auto layout */
+/*flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Star 4 */
+
+/*width: 18px;
+height: 18px;
+
+background: #EEA10C;
+border-radius: 1px;
+
+/* Inside auto layout */
+/*flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Star 5 */
+
+/*width: 18px;
+height: 18px;
+
+background: rgba(248, 248, 248, 0.1);
+border-radius: 1px;
+
+/* Inside auto layout */
+/*flex: none;
+order: 4;
+flex-grow: 0;*/
+
+  } 
+  .photo-card .recipe-rating{
+    display:flex;
+    /* 4.5 */
+position:absolute;
+width: 22px;
+height: 18px;
+top:239px;
+left:16px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 1.3;
+/* identical to box height, or 129% */
+
+color: #F8F8F8;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+  }
+  .photo-card .recipe-button{
+    display:flex;
+    
+  }
+  .rating{
+    font-size: 25px;
+    display: inline-flex;
+    align-items: flex-end;
+  }
+  
+  .rating_body{
+   position: relative;
+  }
+  
+  .rating_body::before{
+    content: '★★★★★';
+    display: block;
+  }
+  .rating_items{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  }
+  
+   .rating_active{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    overflow: hidden; 
+    top: 0;
+  
+  }
+   .rating_active::before{
+      content: '★★★★★';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      color: red;
+  }
+  
+ .rating_value{
+     font-size: 100%;
+  }
+
+  .label-check {
+    display: block;
+    position: relative;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  /* Hide the browser's default checkbox */
+  .label-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: var(--primary-white-color);
+    border: 1px black solid;
+    fill: var(--primary-white-color);
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .label-check input:checked ~ .checkmark {
+    background-color: var(--selection-color);
+    fill: #f4f4fd;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .label-check input:checked ~ .checkmark::after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .label-check .checkmark::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

@@ -1,0 +1,28 @@
+button {
+    cursor: pointer;
+}
+
+#scrollToTopButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.scrollToTop-svg {
+    width: 35px;
+    height: 35px;
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+}
