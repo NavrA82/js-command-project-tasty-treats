@@ -73,6 +73,7 @@
     display: none;
   }
 }
+
 @media screen and (min-width: 768px) {
   .article-poprecipes:nth-child(n + 4) {
     display: flex;
@@ -119,6 +120,7 @@
     text-overflow: ellipsis;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .popular-recipes-title {
     font-size: 20px;

@@ -7,3 +7,4 @@ import './js/header-burger';
 import './js/theme-switcher';
 // import './js/home_categories-api';
 import './js/create-order.js';
+import './js/popular-recipes';
