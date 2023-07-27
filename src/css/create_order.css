@@ -2,10 +2,6 @@ body.show-modal-order-now {
   overflow: hidden;
 }
 
-body.show-modal-order-now .order-now-modal {
-  transform: scale(1);
-}
-
 body.show-modal-order-now .order-now-backdrop {
   opacity: 1;
   visibility: visible;
@@ -16,18 +12,18 @@ body.show-modal-order-now .order-now-backdrop {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: rgba(46, 47, 66, 0.4);
-  z-index: 100;
+  background-color: rgba(4, 66, 28, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
 }
 
 .order-now-modal {
@@ -40,8 +36,8 @@ body.show-modal-order-now .order-now-backdrop {
   padding: 28px 20px;
   background-color: #fff;
   border-radius: 15px;
-  transform: scale(1.1);
-  transition: transform 200ms ease-in-out;
+  /* transition: border 250ms;
+  transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1); */
 }
 
 .order-now-modal-title {
@@ -74,7 +70,9 @@ body.show-modal-order-now .order-now-backdrop {
   justify-content: center;
   flex-direction: column;
 }
-
+input:hover::placeholder {
+  color: #9bb537;
+}
 .order-now-modal-form label:not(:last-of-type) {
   margin-bottom: 16px;
 }
@@ -95,14 +93,16 @@ body.show-modal-order-now .order-now-backdrop {
 
 .order-now-modal-form input,
 textarea {
+  outline: none;
   width: 295px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
 }
 
-.order-now-modal-form__input:focus,
-.order-now-modal-form textarea:focus {
-  outline-color: #9bb537;
+.order-now-modal-form__input:hover,
+.order-now-modal-form textarea:hover {
+  outline: none;
+  border: 2px solid #9bb537;
 }
 
 .order-now-modal-form textarea {

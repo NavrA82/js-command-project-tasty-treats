@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+let recipe;
 const backdrop = document.querySelector('.backdrop-recipes');
 const modal = document.querySelector('.modal-recipe');
 const closeBtn = document.querySelector('.modal-close-btn-recipe');
@@ -49,26 +49,45 @@ backdrop.addEventListener('click', event => {
     closeModalRecipe();
   }
 });
-// // Слухач на пул рецептів для визначення кліку на кнопку картки
-// const recipesContainer = document.querySelector('.image-container');
 
-// recipesContainer.addEventListener('click', async event => {
-//   const seeRecipeBtn = event.target.closest(`recipe-btn-open`);
-//   if (!seeRecipeBtn) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const recipesContainer = document.querySelector('.image-container');
+  const popularList = document.querySelector('.popular-list');
 
-//   const recipeId = seeRecipeBtn.dataset.id;
-//   console.log(recipeId);
-//   try {
-//     const fetchedRecipe = await fetchRecipe(recipeId);
-//     if (fetchedRecipe) {
-//       recipe = fetchedRecipe;
-//       updateFavoriteButtonStatus(recipe);
-//       openModal();
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+  recipesContainer.addEventListener('click', async event => {
+    const seeRecipeBtn = event.target.closest('.rec-btn-open');
+    if (!seeRecipeBtn) return;
+
+    const recipeId = seeRecipeBtn.dataset.id;
+    try {
+      const fetchedRecipe = await fetchRecipe(recipeId);
+      if (fetchedRecipe) {
+        recipe = fetchedRecipe;
+        updateFavoriteButtonStatus(recipe);
+        openModalRecipe();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  popularList.addEventListener('click', async event => {
+    const listItem = event.target.closest('.popular-list-item');
+    if (!listItem) return;
+
+    const recipeId = listItem.dataset.id;
+    try {
+      const fetchedRecipe = await fetchRecipe(recipeId);
+      if (fetchedRecipe) {
+        recipe = fetchedRecipe;
+        updateFavoriteButtonStatus(recipe);
+        openModal();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
+});
 
 async function fetchRecipe(recipeId) {
   console.log(recipeId);
@@ -148,7 +167,9 @@ function displayRecipeIngredients(recipe) {
 
 function displayStarRating(recipe) {
   const ratingValue = parseFloat(recipe.rating);
-  const starElements = document.querySelectorAll('.modal-rating-star-icon');
+  const starElements = document.querySelectorAll(
+    '.modal-recipe-rating-star-icon'
+  );
 
   for (let i = 0; i < starElements.length; i++) {
     if (i < ratingValue) {
@@ -212,7 +233,6 @@ function addToFavorites(recipe) {
 
 //  Слухач події для кнопки "Add to favorite", який для додавання/видалення обраного рецепту з масиву localStorage
 addToFavoriteButton.addEventListener('click', () => {
-  const recipe = fetchRecipe(recipeId);
   const isFavorite = isRecipeInFavorites(recipe);
   if (isFavorite) {
     removeFromFavorites(recipe);

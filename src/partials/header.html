@@ -3,14 +3,15 @@
     <div class="header-container-button">
       <nav class="header-nav">
         <ul class="header-list">
-          <li><a href="./index.html" class="header-link-home">Home</a></li>
+          <li><a href="./index.html" class="header-link-home header-link-active">Home</a></li>
           <li><a href="./favorites-page.html" class="header-link-favorites">Favorites</a></li>
         </ul>
-        <a class="header-logo header-logo-tasty" href="#">tasty<span class="header-logo-treats">treats.</span></a>
+        <a class="header-logo header-logo-tasty" href="./index.html">tasty<span
+            class="header-logo-treats">treats.</span></a>
         <div class="header-svg">
           <img class="header-shopping section__button section__button1" src="./images/svg/shopping-cart.svg"
             alt="My Happy SVG-burger" />
-
+          <!-- order now  -->
           <div class="modal modal1">
             <div class="modal__main">
               <div class="modal__container">
@@ -27,26 +28,26 @@
                   <input class="header-send" type="submit" value="Send">
                 </form>
               </div>
-              <img class="modal__close " aria-expanded="false" aria-controls="header-mobile-menu"
+              <img class="header-img modal__close " aria-expanded="false" aria-controls="header-mobile-menu"
                 src="./images/svg/x.svg" alt="My Happy SVG-close" />
             </div>
           </div>
-          <img class="header-burger js-header-open-menu " aria-expanded="false" aria-controls="header-mobile-menu"
-            src="./images/svg/align-justify.svg" alt="My Happy SVG-burger" />
-            <div class="js-swither header-switch">
-              <label for="pill"class="switch">
-                <input type="checkbox" class="switch-input" id="pill" name="check">
-                <span class="switch-slider"></span>
-              </label>
-            </div>
+          <img class="header-img header-burger js-header-open-menu " aria-expanded="false"
+            aria-controls="header-mobile-menu" src="./images/svg/align-justify.svg" alt="My Happy SVG-burger" />
+          <div class="js-swither header-switch">
+            <label for="pill" class="switch">
+              <input type="checkbox" class="switch-input" id="pill" name="check">
+              <span class="switch-slider"></span>
+            </label>
+          </div>
         </div>
       </nav>
     </div>
   </div>
   <!-- js close modal -->
   <div class="header-menu-container js-header-menu-container" id="header-mobile-menu">
-    <img class="menu-toggle js-header-close-menu burger-mobile-close" src="./images/svg/x.svg" width="28" height="28"
-      alt="My Happy SVG" />
+    <img class="header-img  menu-toggle js-header-close-menu burger-mobile-close" src="./images/svg/x.svg" width="28"
+      height="28" alt="My Happy SVG" />
     <ul class="mobile-menu">
       <li class="mobile-item">
         <a href="#header-anchor" class="burger-link burger-home">Home</a>
@@ -55,12 +56,12 @@
         <a href="#" class="burger-link burger-favorites">Favorites</a>
       </li>
     </ul>
-    <div class="js-swither left-bottom-align">
+    <div class="js-swither left-bottom-align header-switch">
       <label class="burger-switch">
         <input type="checkbox" class="burger-switch-input">
         <span class="burger-switch-slider"></span>
       </label>
     </div>
   </div>
-  
+  <script src="./js/header-burger.js"></script>
 </header>

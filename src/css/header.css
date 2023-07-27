@@ -30,7 +30,6 @@
     align-items: center;
     gap: 16px;
     display: flex;
-    /* Показываем список на ширине экрана 768px и больше */
   }
 }
 
@@ -54,12 +53,12 @@
 /* Стили для ссылок */
 .header-link-home,
 .header-link-favorites {
-  font-size: 12px;
-  line-height: 14.52px;
+  font-size: 14px;
+  line-height: 14px;
   font-weight: 400;
 }
 
-.header-link-home {
+.header-link-active {
   color: var(--accent-color);
 }
 
@@ -72,7 +71,7 @@
   color: var(--accent-color);
   text-align: center;
   letter-spacing: -4%;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 18px;
 }
@@ -80,6 +79,11 @@
 /* Стили для логотипа "Treats" */
 .header-logo-treats {
   color: var(--primaty-black-color);
+  text-align: center;
+  letter-spacing: -4%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
 }
 
 /* Стили для переключателя */
@@ -117,14 +121,14 @@
   width: 46px;
   height: 20px;
   border-radius: 60px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* винести в змінну */
-  background-color: #cecdcd;
+  box-shadow: 7px 5px 15px 0px rgba(160, 158, 160, 0.40);
+  background-color: #CECDCD;
   transition: 0.4s;
 }
 
-.switch-slider::before {
-  content: '';
+.switch-slider::before,
+.burger-switch-slider::before {
+  content: "";
   position: absolute;
   cursor: pointer;
   right: 0.6px;
@@ -134,20 +138,21 @@
   width: 18.8px;
   border-radius: 50%;
   background-color: rgb(243, 243, 243);
+  box-shadow: 7px 5px 15px 0px rgba(160, 158, 160, 0.40);
   transition: 0.4s;
 }
 
 /* Стили при фокусе */
-.switch-input:focus + .switch-slider {
+.switch-input:focus+.switch-slider {
   box-shadow: 0 0 1px rgb(177, 177, 174);
 }
 
 /* Стили при включенном переключателе */
-.switch-input:checked + .switch-slider {
+.switch-input:checked+.switch-slider {
   background-color: var(--accent-color);
 }
 
-.switch-input:checked + .switch-slider::before {
+.switch-input:checked+.switch-slider::before {
   transform: translateX(26px);
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
@@ -163,7 +168,7 @@
 }
 
 .header-burger,
-.header-svg img,
+.header-svg header-img,
 .header-logo-treats,
 .header-link-favorites {
   filter: invert(0%);
@@ -181,8 +186,9 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .header-burger,
-  .header-svg img,
+  .header-svg header-img,
   .header-logo-treats,
   .header-link-favorites {
     filter: invert(0%);
@@ -231,7 +237,7 @@
 }
 
 .burger-link {
-  color: #fff;
+  color: #FFF;
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -287,7 +293,7 @@
   background-color: var(--accent-color);
   z-index: 999;
   transform: translate(100%);
-  transition: transform 0.25s ease-in-out;
+  transition: transform .25s ease-in-out;
   display: flex;
   flex-direction: column;
   padding: 138px 46px 500px 50px;
@@ -342,35 +348,21 @@
   border-radius: 60px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* винести в змінну */
-  background-color: #cecdcd;
-  transition: 0.4s;
-}
-
-.burger-switch-slider::before {
-  content: '';
-  position: absolute;
-  cursor: pointer;
-  right: 0.6px;
-  left: 0.6px;
-  bottom: 0.6px;
-  height: 18.8px;
-  width: 18.8px;
-  border-radius: 50%;
-  background-color: var(--text-white-color);
+  background-color: #CECDCD;
   transition: 0.4s;
 }
 
 /* Стили при фокусе */
-.burger-switch-input:focus + .burger-switch-slider {
+.burger-switch-input:focus+.burger-switch-slider {
   box-shadow: 0 0 1px rgb(177, 177, 174);
 }
 
 /* Стили при включенном переключателе бургера */
-.burger-switch-input:checked + .burger-switch-slider {
+.burger-switch-input:checked+.burger-switch-slider {
   background-color: var(--accent-color);
 }
 
-.burger-switch-input:checked + .burger-switch-slider::before {
+.burger-switch-input:checked+.burger-switch-slider::before {
   transform: translateX(26px);
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
@@ -378,7 +370,7 @@
 
 /* Стили для белых иконок в темной теме */
 .dark-theme .header-burger.white,
-.dark-theme .header-svg img.white,
+.dark-theme .header-svg header-img.white,
 .dark-theme .header-logo-treats.white,
 .dark-theme .header-link-favorites.white {
   filter: invert(1);
@@ -400,7 +392,7 @@
   padding: 30px;
   overflow-y: auto;
   display: none;
-  z-index: 20;
+  z-index: 9999;
 }
 
 @media screen and (min-width: 768px) {
@@ -411,7 +403,7 @@
 }
 
 .modal__main {
-  background-color: #fff;
+  background-color: #FFF;
   position: relative;
   width: 440px;
   height: 632px;
@@ -432,7 +424,6 @@
   line-height: 22px;
   text-transform: uppercase;
   padding-top: 30px;
-  padding-left: 40px;
 }
 
 .modal__title {
@@ -450,11 +441,11 @@
   cursor: pointer;
   font-size: 22px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 16px;
+  right: 16px;
   outline: 1px solid transparent;
   outline-offset: 3px;
-  transition: outline-color 0.15s ease-in-out;
+  transition: outline-color .15s ease-in-out;
   border-radius: 3px;
   padding: 0;
   text-align: center;
@@ -475,7 +466,7 @@ form {
 }
 
 .header-label {
-  color: rgba(5, 5, 5, 0.5);
+  color: rgba(5, 5, 5, 0.50);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -493,7 +484,7 @@ form {
   align-items: flex-start;
   gap: 10px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid rgba(5, 5, 5, 0.20);
   margin-bottom: 18px;
 }
 

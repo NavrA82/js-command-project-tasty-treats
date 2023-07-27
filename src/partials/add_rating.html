@@ -1,0 +1,90 @@
+<div class="modal-backdrop-add-rating is-hidden" data-modal-rating>
+  <div class="modal-add-rating">
+    <button class="modal-close-btn" data-modal-close-rating type="button">
+      <svg height="20" width="20">
+        <use
+          href="./images/sprite/icons.svg#icon-x"
+          class="modal-close-btn-icon"
+        ></use>
+      </svg>
+    </button>
+
+    <form action="#" class="rating-form">
+      <span class="rating-title">Rating</span>
+      <div class="rating-wrap">
+        <span class="rating-value">0.0</span>
+        <div class="star-rating__stars">
+          <input
+            class="star-rating__input"
+            type="radio"
+            name="rating"
+            value="1"
+            id="rating-1"
+          />
+          <label
+            class="star-rating__label"
+            for="rating-1"
+            aria-label="One"
+          ></label>
+          <input
+            class="star-rating__input"
+            type="radio"
+            name="rating"
+            value="2"
+            id="rating-2"
+          />
+          <label
+            class="star-rating__label"
+            for="rating-2"
+            aria-label="Two"
+          ></label>
+          <input
+            class="star-rating__input"
+            type="radio"
+            name="rating"
+            value="3"
+            id="rating-3"
+          />
+          <label
+            class="star-rating__label"
+            for="rating-3"
+            aria-label="Three"
+          ></label>
+          <input
+            class="star-rating__input"
+            type="radio"
+            name="rating"
+            value="4"
+            id="rating-4"
+          />
+          <label
+            class="star-rating__label"
+            for="rating-4"
+            aria-label="Four"
+          ></label>
+          <input
+            class="star-rating__input"
+            type="radio"
+            name="rating"
+            value="5"
+            id="rating-5"
+          />
+          <label
+            class="star-rating__label"
+            for="rating-5"
+            aria-label="Five"
+          ></label>
+          <div class="star-rating__focus"></div>
+        </div>
+      </div>
+
+      <label>
+        <input type="email" placeholder="Enter email" class="rating-email" />
+      </label>
+
+      <button type="submit" class="rating-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="./js/add-rating.js" type="module"></script>
