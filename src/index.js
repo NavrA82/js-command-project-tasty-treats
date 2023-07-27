@@ -6,5 +6,5 @@ import './js/header-burger';
 // import './js/extrafilters';
 import './js/theme-switcher';
 // import './js/home_categories-api';
-// import './js/create-order.js';
+import './js/create-order.js';
 // import './js/favorites';

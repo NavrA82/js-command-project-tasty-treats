@@ -1,14 +1,13 @@
 <div class="order-now-backdrop js-backdrop">
 				<div class="order-now-modal">
-					<h2 class="order-now-modal__title">Order Now</h2>
-					<button class="order-now-modal__close-btn" type="button">
+					<h2 class="order-now-modal-title">Order Now</h2>
+					<button class="order-now-modal-button-close-js" type="button">
 						<svg
-							class="order-now-modal-close__img"
+							class="order-now-modal-close-svg"
 							width="20"
 							height="20"
 							viewBox="0 0 20 20"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
 								d="M15 5L5 15"
@@ -46,7 +45,7 @@
        <span>Phone number</span>
        <input class="order-now-modal-form__input"
           type="tel"
-          name="phone"
+          name="user_phone"
 										minlength="11"
 										maxlength="17"
           placeholder="+38"
@@ -56,11 +55,15 @@
      </label>
      <label>
        <span>Email</span>
-       <input class="order-now-modal-form__input" type="email" name="email" placeholder="enter your email" required/>
+       <input class="order-now-modal-form__input" 
+							type="email" 
+							name="user_email" 
+							placeholder="enter your email" 
+							required/>
      </label>
      <label>
        <span>Comment</span>
-       <textarea name="comment"></textarea>
+       <textarea name="user_comment"></textarea>
      </label>
      <button class="order-now-modal-form__button-submit" type="submit">Send</button>
    </form>

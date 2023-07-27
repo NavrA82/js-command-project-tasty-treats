@@ -25,7 +25,7 @@ body.show-modal-order-now .order-now-backdrop {
   padding-bottom: 30px;
   background-color: rgba(46, 47, 66, 0.4);
   z-index: 100;
-  /* opacity: 0; */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
 }
@@ -44,7 +44,7 @@ body.show-modal-order-now .order-now-backdrop {
   transition: transform 200ms ease-in-out;
 }
 
-.order-now-modal__title {
+.order-now-modal-title {
   margin: 0;
   margin-bottom: 40px;
   font-weight: 600;
@@ -53,7 +53,7 @@ body.show-modal-order-now .order-now-backdrop {
   text-transform: uppercase;
 }
 
-.order-now-modal__close-btn {
+.order-now-modal-button-close-js {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -124,12 +124,12 @@ textarea {
   cursor: pointer;
 }
 
-.order-now-modal-close__img path {
+.order-now-modal-close-svg path {
   stroke: #050505;
   transition: stroke var(--animation-set);
 }
 
-.order-now-modal-close__img:hover path {
+.order-now-modal-close-svg:hover path {
   stroke: #9bb537;
 }
 
@@ -156,7 +156,7 @@ textarea {
   .order-now-modal-form__input {
     height: 48px;
   }
-  .order-now-modal-close__img {
+  .order-now-modal-close-svg {
     width: 24px;
     height: 24px;
   }

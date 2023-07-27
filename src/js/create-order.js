@@ -1,14 +1,17 @@
-const openButtonHeroModal = document.querySelector('btn-order');
-const closeButtonModal = document.querySelector('order-now-modal__close-btn');
-const closeButtonModal = document.querySelector('order-now-modal__close-btn');
+const openButtonHeroModal = document.querySelector('.button-order-now-hero-js');
+const closeButtonModal = document.querySelector(
+  '.order-now-modal-button-close-js'
+);
+const backdrop = document.querySelector('.js-backdrop');
+// const formModalOrderNow = document.querySelector('.order-now-modal-form');
 
 openButtonHeroModal.addEventListener('click', onClickModalOpen);
 
 closeButtonModal.addEventListener('click', onClickModalRemove);
 
-backdropEl.addEventListener('click', onBackdropClick);
+backdrop.addEventListener('click', onClickBackdrop);
 
-modalOrderNowForm.addEventListener('submit', onSubmitForm);
+// formModalOrderNow.addEventListener('submit', onSubmitForm);
 
 function onClickModalOpen() {
   window.addEventListener('keydown', onEscKeyPress);
@@ -20,7 +23,7 @@ function onClickModalRemove() {
   document.body.classList.remove('show-modal-order-now');
 }
 
-function onBackdropClick(event) {
+function onClickBackdrop(event) {
   if (event.currentTarget === event.target) {
     onModalRemove();
   }
@@ -30,25 +33,4 @@ function onEscKeyPress(event) {
   if (event.code === 'Escape') {
     onModalRemove();
   }
-}
-
-function onSubmitForm(e) {
-  e.preventDefault();
-
-  const formData = extractFormData(refs.modalOrderNowForm);
-  console.log(formData);
-
-  refs.modalOrderNowForm.reset();
-}
-
-function extractFormData(form) {
-  const formData = {};
-  const inputsEl = form.elements;
-
-  formData.name = inputsEl.name.value;
-  formData.phone = inputsEl.phone.value;
-  formData.email = inputsEl.email.value;
-  formData.comment = inputsEl.comment.value;
-
-  return formData;
 }
