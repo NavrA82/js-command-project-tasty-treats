@@ -1,13 +1,14 @@
 const openButtonHeroModal = document.querySelector('btn-order');
 const closeButtonModal = document.querySelector('order-now-modal__close-btn');
+const closeButtonModal = document.querySelector('order-now-modal__close-btn');
 
 openButtonHeroModal.addEventListener('click', onClickModalOpen);
 
 closeButtonModal.addEventListener('click', onClickModalRemove);
 
-refs.backdropEl.addEventListener('click', onBackdropClick);
+backdropEl.addEventListener('click', onBackdropClick);
 
-refs.modalOrderNowForm.addEventListener('submit', onSubmitForm);
+modalOrderNowForm.addEventListener('submit', onSubmitForm);
 
 function onClickModalOpen() {
   window.addEventListener('keydown', onEscKeyPress);
