@@ -2,6 +2,11 @@ import axios from 'axios';
 import { debounce } from 'lodash';
 import Notiflix from 'notiflix';
 
+// import { renderCardsList } from './home_categories-api';
+
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
 
 const refs = {
@@ -16,7 +21,21 @@ const refs = {
   resetBtnTotalExtraFiltersForm: document.querySelector(
     '.extra-filters-reset-btn'
   ),
+  allCategoriesGallery: document.querySelector('.pictures-gallery'),
 };
+
+let limitCount = 0;
+if (document.documentElement.clientWidth < 768) {
+  limitCount = 6;
+} else if (
+  document.documentElement.clientWidth > 768 &&
+  document.documentElement.clientWidth < 1280
+) {
+  limitCount = 8;
+} else if (document.documentElement.clientWidth > 1280) {
+  limitCount = 9;
+}
+
 const {
   formExtraFilters,
   inputExtraFiltersForm,
@@ -25,10 +44,58 @@ const {
   areaSelectorFiltersForm,
   ingredientsSelectorFiltersForm,
   resetBtnTotalExtraFiltersForm,
+  allCategoriesGallery,
 } = refs;
 
-//отримуємо інфо з API у розмітку
-// //==================== 1 регіони ====================
+//================================================================
+//                  управління
+//================================================================
+
+resetBtnTotalExtraFiltersForm.addEventListener('click', () => {
+  timeSelectorFiltersForm.value = '';
+  areaSelectorFiltersForm.value = '';
+  ingredientsSelectorFiltersForm.value = '';
+});
+
+searchResetBtnInputExtraFiltersForm.addEventListener('click', () => {
+  inputExtraFiltersForm.value = '';
+  searchResetBtnInputExtraFiltersForm.hidden = true;
+});
+
+searchResetBtnInputExtraFiltersForm.hidden = true;
+
+export function onFetchError() {
+  Notiflix.Report.failure(
+    '&#128532; Something went wrong!',
+    'Try reloading the page!',
+    'And try Again'
+  );
+}
+
+//================================================================
+//                  отримуємо інфо з API у розмітку
+//================================================================
+
+// async function getOptions(api) {
+//   const response = await axios.get(`${BASE_URL}/${api}`);
+//   return response.data;
+// }
+
+// async function markUpOptionsArr(api) {
+//   const data = await getOptions(api);
+//   return data.reduce((markUp, currentName) => {
+//     return markUp + `<option>${currentName.name}</option>`;
+//   }, '');
+// }
+
+// async function addOptions(api, input) {
+//   const data = await markUpOptionsArr(api);
+
+//   input.insertAdjacentHTML('beforeend', data);
+// }
+
+// addOptions('areas', areaSelectorFiltersForm);
+// addOptions('ingredients', ingredientsSelectorFiltersForm);
 
 const fetchAreas = async () => {
   try {
@@ -76,28 +143,9 @@ fetchIngredients()
     onFetchError(error);
   });
 
-//=================== управління ===================
-
-function onFetchError() {
-  Notiflix.Report.failure(
-    '&#128532; Something went wrong!',
-    'Try reloading the page!',
-    'And try Again'
-  );
-}
-
-resetBtnTotalExtraFiltersForm.addEventListener('click', () => {
-  timeSelectorFiltersForm.value = 'all-time';
-  areaSelectorFiltersForm.value = 'all-areas';
-  ingredientsSelectorFiltersForm.value = 'all-ingredients';
-});
-
-searchResetBtnInputExtraFiltersForm.addEventListener('click', () => {
-  inputExtraFiltersForm.value = '';
-  searchResetBtnInputExtraFiltersForm.hidden = true;
-});
-
-searchResetBtnInputExtraFiltersForm.hidden = true;
+//================================================================
+//                 запит
+//================================================================
 
 formExtraFilters.addEventListener('click', event => {
   event.preventDefault();
@@ -108,28 +156,84 @@ formExtraFilters.addEventListener('click', event => {
 // // Також при реалізації пошуку слід виконувати санітизацію введеного рядка методом trim(), що вирішить проблему, коли в полі
 // // введені тільки пробіли або якщо вони є на початку і в кінці введеного ключового слова"
 
-inputExtraFiltersForm.addEventListener('input', debounce(onInputForm, 300));
+// async function searchRecipe(event) {
+//   const query = String(inputExtraFiltersForm.value.trim());
+//   console.log(!query);
+//   if (!query) {
+//     Notiflix.Report.failure('Please,input the valid query');
+//     inputExtraFiltersForm.value = '';
+//     searchResetBtnInputExtraFiltersForm.hidden = true;
+//     //функція Вячеслава по останній обраній категорії
+//   }
+//   if (query !== '') {
+//     searchResetBtnInputExtraFiltersForm.hidden = false;
+//     getData();
+//     // функція Вячеслава показати рецепти з урахуванням веденого тайтлу
+//     // await showRecipes(`${BASE_URL}/recipes`, {
+//     //   limit: limitCount,
+//     //   title: query.value,
+//     // });
+//     //функція Вячеслава про пагінацію з урахуванням веденого тайтлу
+//     //   await showPagination(`${BASE_URL}/recipes`, {
+//     //     limit: limitCount,
+//     //     title: query.value,
+//     //   });
+//     return;
+//   }
+//   // console.log(value);
+// }
 
-function onInputForm(event) {
-  query = String(event.target.value.trim());
-  console.log(query);
-  if (query !== '') {
-    // console.log(query);
-    // searchOnQuery(query);
-    // document.querySelector('.all-recipes').insertAdjacentHTML(
-    //   'beforeend',
-    //   `
-    // <li class="cards__item items-set}">qwertyukil </li>
-    // `
-    // );
-    searchResetBtnInputExtraFiltersForm.hidden = false;
-  } else {
-    // Notiflix.Report.failure(
-    //   '&#128532; We can`t !',
-    //   'Try reloading the page!',
-    //   'And try Again'
-    // );
-    searchResetBtnInputExtraFiltersForm.hidden = true;
+inputExtraFiltersForm.addEventListener(
+  'input',
+  debounce(handleSearchInput, 300)
+);
+
+async function getRecipes() {
+  try {
+    const response = await axios.get(`${BASE_URL}/recipes/`);
+    return response.data;
+  } catch (error) {
+    // onFetchError();
+    console.log(error);
   }
-  300;
+}
+
+// getRecipes()
+//      .then(data => {
+//        // console.log(data.results);
+//        let response = data.results;
+//        response.map(el => console.log(el.tags));
+//      })
+//      .catch(error => {
+//        // onFetchError(error);
+//        console.log(error);
+//      });
+
+// Функція для виведення рецептів зі співпадаючим ключовим у консоль
+
+// Функція обробки події onInput з використанням Debounce
+async function handleSearchInput(event) {
+  const keyword = event.target.value.trim();
+
+  const recipe = await getRecipes();
+
+  // if (keyword === '') {
+  //   // const results = await getRecipesByCategory(category); - функція Вячеслава по виклику усіх категорії або певної категорії
+  //   // showMatchingRecipes(recipes, keyword);
+  // } else {
+
+  //   // showMatchingRecipes(recipes, keyword);
+
+  // }
+
+  // getRecipes()
+  //   .then(data => {
+  //     // console.log(data.results);
+  //     let response = data.results;
+  //     response.map(el => console.log(el.tags));
+  //   })
+  //   .catch(error => {
+  //     // onFetchError(error);
+  //     console.log(error);
+  //   });
 }

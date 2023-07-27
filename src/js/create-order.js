@@ -1,23 +1,20 @@
-refs.openButtonHeroEl;
+const openButtonHeroModal = document.querySelector('btn-order');
+const closeButtonModal = document.querySelector('order-now-modal__close-btn');
 
-if (refs.openButtonHeroEl) {
-  refs.openButtonHeroEl.addEventListener('click', onModalOpen);
-}
+openButtonHeroModal.addEventListener('click', onClickModalOpen);
 
-refs.openButtonEl.addEventListener('click', onModalOpen);
-
-refs.closeButtonEl.addEventListener('click', onModalRemove);
+closeButtonModal.addEventListener('click', onClickModalRemove);
 
 refs.backdropEl.addEventListener('click', onBackdropClick);
 
 refs.modalOrderNowForm.addEventListener('submit', onSubmitForm);
 
-function onModalOpen() {
+function onClickModalOpen() {
   window.addEventListener('keydown', onEscKeyPress);
   document.body.classList.add('show-modal-order-now');
 }
 
-function onModalRemove() {
+function onClickModalRemove() {
   window.removeEventListener('keydown', onEscKeyPress);
   document.body.classList.remove('show-modal-order-now');
 }
