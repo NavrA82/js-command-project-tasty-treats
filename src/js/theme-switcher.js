@@ -3,7 +3,6 @@ function theme() {
     '.header-switch input[type="checkbox"]'
   );
   const el = document.documentElement;
-
   checkbox.addEventListener('change', () => {
     if (el.hasAttribute('data-theme')) {
       el.removeAttribute('data-theme');
@@ -13,7 +12,6 @@ function theme() {
       localStorage.setItem('theme', 'dark');
     }
   });
-
   function setThemeFromMediaQuery() {
     if (
       window.matchMedia &&
@@ -30,7 +28,6 @@ function theme() {
     setThemeFromMediaQuery();
     updateThemeByTime();
   }
-
   function updateThemeByTime() {
     const currentHour = new Date().getHours();
     if (currentHour >= 18 || currentHour < 6) {
@@ -42,5 +39,4 @@ function theme() {
     }
   }
 }
-
 theme();
