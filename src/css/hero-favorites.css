@@ -104,7 +104,7 @@
   gap: 18px;
   padding-top: 64px;
   padding-bottom: 32px;
-  padding-left: 120px;
+  padding-left: 200px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -129,7 +129,3 @@
   font-size: 18px;
   line-height: 22px;
 }
-
-
-
-  
