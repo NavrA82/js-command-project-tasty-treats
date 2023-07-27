@@ -25,12 +25,12 @@ function onClickModalRemove() {
 
 function onClickBackdrop(event) {
   if (event.currentTarget === event.target) {
-    onModalRemove();
+    onClickModalRemove();
   }
 }
 
 function onEscKeyPress(event) {
   if (event.code === 'Escape') {
-    onModalRemove();
+    onClickModalRemove();
   }
 }
