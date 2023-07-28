@@ -51,11 +51,11 @@ backdrop.addEventListener('click', event => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const recipesContainer = document.querySelector('.image-container');
-  const popularList = document.querySelector('.popular-list');
+  const recipesContainer = document.querySelector('.pictures-gallery');
+  const popularList = document.querySelector('.popular-recipes');
 
   recipesContainer.addEventListener('click', async event => {
-    const seeRecipeBtn = event.target.closest('.rec-btn-open');
+    const seeRecipeBtn = event.target.closest('.get-recipes');
     if (!seeRecipeBtn) return;
 
     const recipeId = seeRecipeBtn.dataset.id;
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   popularList.addEventListener('click', async event => {
-    const listItem = event.target.closest('.popular-list-item');
+    const listItem = event.target.closest('.article-poprecipes');
     if (!listItem) return;
 
     const recipeId = listItem.dataset.id;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (fetchedRecipe) {
         recipe = fetchedRecipe;
         updateFavoriteButtonStatus(recipe);
-        openModal();
+        openModalRecipe();
       }
     } catch (error) {
       console.log(error);

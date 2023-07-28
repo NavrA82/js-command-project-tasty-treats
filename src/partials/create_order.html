@@ -1,74 +1,80 @@
 <div class="order-now-backdrop js-backdrop">
-				<div class="order-now-modal">
-					<h2 class="order-now-modal-title">Order Now</h2>
-					<button class="order-now-modal-button-close-js" type="button">
-						<svg
-							class="order-now-modal-close-svg"
-							width="20"
-							height="20"
-							viewBox="0 0 20 20"
-							fill="none"
-						>
-							<path
-								d="M15 5L5 15"
-								stroke="#050505"
-								stroke-width="1.8"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-							<path
-								d="M5 5L15 15"
-								stroke="#050505"
-								stroke-width="1.8"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</button>
+  <div class="order-now-modal">
+    <h2 class="order-now-modal-title">Order Now</h2>
+    <button class="order-now-modal-button-close-js" type="button">
+      <svg
+        class="order-now-modal-close-svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+      >
+        <path
+          d="M15 5L5 15"
+          stroke="#050505"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5 5L15 15"
+          stroke="#050505"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
 
-					<div class="order-now-form-wrap">
-     <form class="order-now-modal-form">
-     <label>
-       <span>Name</span>
-       <input class="order-now-modal-form-input" 
-								type="text" 
-								name="user_name" 
-								placeholder="name"
-								type="text"
-								minlength="2"
-								maxlength="100"
-								pattern="^[A-Za-z-Яа-яІіЇїЄєґҐ]+$"
-								autofocus
-								required/>
-     </label>
-     <label>
-       <span>Phone number</span>
-       <input class="order-now-modal-form-input"
-          type="tel"
-          name="user_phone"
-										minlength="11"
-										maxlength="17"
-          placeholder="+38"
-          pattern="[+0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-										title="+xx-xxx-xxx-xx-xx"
-          required/>
-     </label>
-     <label>
-       <span>Email</span>
-       <input class="order-now-modal-form-input" 
-							type="email" 
-							name="user_email" 
-							placeholder="email" 
-							required/>
-     </label>
-     <label>
-       <span>Comment</span>
-       <textarea placeholder="text" name="user_comment"></textarea>
-     </label>
-     <button class="order-now-modal-form-button-submit"   type="submit">Send</button>
-   </form>
-
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="order-now-form-wrap">
+      <form class="order-now-modal-form">
+        <label>
+          <span>Name</span>
+          <input
+            class="order-now-modal-form-input"
+            type="text"
+            name="user_name"
+            placeholder="name"
+            type="text"
+            minlength="2"
+            maxlength="100"
+            pattern="^[A-Za-z-Яа-яІіЇїЄєґҐ]+$"
+            autofocus
+            required
+          />
+        </label>
+        <label>
+          <span>Phone number</span>
+          <input
+            class="order-now-modal-form-input"
+            type="tel"
+            name="user_phone"
+            minlength="11"
+            maxlength="17"
+            placeholder="+38"
+            pattern="[+0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            title="+xx-xxx-xxx-xx-xx"
+            required
+          />
+        </label>
+        <label>
+          <span>Email</span>
+          <input
+            class="order-now-modal-form-input"
+            type="email"
+            name="user_email"
+            placeholder="email"
+            required
+          />
+        </label>
+        <label>
+          <span>Comment</span>
+          <textarea placeholder="text" name="user_comment"></textarea>
+        </label>
+        <button class="order-now-modal-form-button-submit" type="submit">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

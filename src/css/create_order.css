@@ -69,8 +69,10 @@ textarea:hover::placeholder {
   color: #9bb537;
 }
 
-.order-now-modal-form label:not(:last-of-type) {
-  margin-bottom: 16px;
+.order-now-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .order-now-modal-form span {
