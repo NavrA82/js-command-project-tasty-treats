@@ -1,4 +1,4 @@
-import './js/recipe';
+// import './js/recipe';
 import './js/switcher';
 import './js/scroll-up';
 import './js/slider';
