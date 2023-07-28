@@ -4,12 +4,14 @@ const openButtonHeroModal = document.querySelector('.button-order-now-hero-js');
 const closeButtonModal = document.querySelector(
   '.order-now-modal-button-close-js'
 );
+
+const openHederBasketFavorite = document.querySelector('.section__button');
 const openHederBasket = document.querySelector('.section__button1');
 const backdrop = document.querySelector('.js-backdrop');
 const formModalOrderNow = document.querySelector('.order-now-modal-form');
 const body = document.body;
 
-openButtonHeroModal.addEventListener('click', onClickModalOpen);
+openHederBasket.addEventListener('click', onClickModalOpen);
 
 closeButtonModal.addEventListener('click', onClickModalRemove);
 
@@ -17,8 +19,12 @@ backdrop.addEventListener('click', onClickBackdrop);
 
 formModalOrderNow.addEventListener('submit', onSubmitForm);
 
-if (openHederBasket) {
-  openHederBasket.addEventListener('click', onClickModalOpen);
+if (openButtonHeroModal) {
+  openButtonHeroModal.addEventListener('click', onClickModalOpen);
+}
+
+if (openHederBasketFavorite) {
+  openHederBasketFavorite.addEventListener('click', onClickModalOpen);
 }
 
 function onClickModalOpen() {

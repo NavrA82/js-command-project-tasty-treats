@@ -3,40 +3,92 @@
     <div class="header-container-button">
       <nav class="header-nav">
         <ul class="header-list">
-          <li><a href="./index.html" class="header-link-home header-link-active">Home</a></li>
-          <li><a href="./favorites-page.html" class="header-link-favorites">Favorites</a></li>
+          <li>
+            <a href="./index.html" class="header-link-home header-link-active"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="./favorites-page.html" class="header-link-favorites"
+              >Favorites</a
+            >
+          </li>
         </ul>
-        <a class="header-logo header-logo-tasty" href="./index.html">tasty<span
-            class="header-logo-treats">treats.</span></a>
+        <a class="header-logo header-logo-tasty" href="./index.html"
+          >tasty<span class="header-logo-treats">treats.</span></a
+        >
         <div class="header-svg">
-          <img class="header-shopping section__button section__button1" src="./images/svg/shopping-cart.svg"
-            alt="My Happy SVG-burger" />
+          <img
+            class="header-shopping section__button section__button1"
+            src="./images/svg/shopping-cart.svg"
+            alt="My Happy SVG-burger"
+          />
           <!-- order now  -->
           <div class="modal modal1">
             <div class="modal__main">
               <div class="modal__container">
                 <p class="text-order-now">Order now</p>
                 <form action="/submit" method="POST">
-                  <label class="header-label header-label-name" for="name">Name:</label>
-                  <input class="header-input" type="text" id="name" name="name" required>
+                  <label class="header-label header-label-name" for="name"
+                    >Name:</label
+                  >
+                  <input
+                    class="header-input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                  />
                   <label class="header-label" for="phone">Phone number:</label>
-                  <input class="header-input" type="tel" id="phone" name="phone" required>
+                  <input
+                    class="header-input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
                   <label class="header-label" for="email">Email:</label>
-                  <input class="header-input" type="email" id="email" name="email" required>
+                  <input
+                    class="header-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
                   <label class="header-label" for="message">Comment:</label>
-                  <textarea class="header-textarea" id="message" name="message" required></textarea>
-                  <input class="header-send" type="submit" value="Send">
+                  <textarea
+                    class="header-textarea"
+                    id="message"
+                    name="message"
+                    required
+                  ></textarea>
+                  <input class="header-send" type="submit" value="Send" />
                 </form>
               </div>
-              <img class="header-img modal__close " aria-expanded="false" aria-controls="header-mobile-menu"
-                src="./images/svg/x.svg" alt="My Happy SVG-close" />
+              <img
+                class="header-img modal__close"
+                aria-expanded="false"
+                aria-controls="header-mobile-menu"
+                src="./images/svg/x.svg"
+                alt="My Happy SVG-close"
+              />
             </div>
           </div>
-          <img class="header-img header-burger js-header-open-menu " aria-expanded="false"
-            aria-controls="header-mobile-menu" src="./images/svg/align-justify.svg" alt="My Happy SVG-burger" />
+          <img
+            class="header-img header-burger js-header-open-menu"
+            aria-expanded="false"
+            aria-controls="header-mobile-menu"
+            src="./images/svg/align-justify.svg"
+            alt="My Happy SVG-burger"
+          />
           <div class="js-swither header-switch">
             <label for="pill" class="switch">
-              <input type="checkbox" class="switch-input" id="pill" name="check">
+              <input
+                type="checkbox"
+                class="switch-input"
+                id="pill"
+                name="check"
+              />
               <span class="switch-slider"></span>
             </label>
           </div>
@@ -45,9 +97,17 @@
     </div>
   </div>
   <!-- js close modal -->
-  <div class="header-menu-container js-header-menu-container" id="header-mobile-menu">
-    <img class="header-img  menu-toggle js-header-close-menu burger-mobile-close" src="./images/svg/x.svg" width="28"
-      height="28" alt="My Happy SVG" />
+  <div
+    class="header-menu-container js-header-menu-container"
+    id="header-mobile-menu"
+  >
+    <img
+      class="header-img menu-toggle js-header-close-menu burger-mobile-close"
+      src="./images/svg/x.svg"
+      width="28"
+      height="28"
+      alt="My Happy SVG"
+    />
     <ul class="mobile-menu">
       <li class="mobile-item">
         <a href="#header-anchor" class="burger-link burger-home">Home</a>
@@ -58,7 +118,7 @@
     </ul>
     <div class="js-swither left-bottom-align header-switch">
       <label class="burger-switch">
-        <input type="checkbox" class="burger-switch-input">
+        <input type="checkbox" class="burger-switch-input" />
         <span class="burger-switch-slider"></span>
       </label>
     </div>
