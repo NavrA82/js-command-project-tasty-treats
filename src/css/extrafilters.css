@@ -247,7 +247,7 @@ option:is(:hover, :focus) {
 
   .form-el-time,
   .form-el-area {
-    flex-basis: 0;
+    /* flex-basis: 0; */
   }
 
   .form-el-time .extra-filters-form-select {
