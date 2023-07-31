@@ -1,467 +1,840 @@
-*,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
 }
-/* .container-categories{
+/* .container{
   margin:0 auto;
-  width:1200px;
+ width:1200px;
   padding-top:94px;
   padding-bottom:94px;
 } */
-.home-categories {
-  display: flex;
-  width: auto;
-  height: auto;
-  background: #fff;
+
+/* @media screen and (min-width: 320px) {
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
-.section-elements {
-  display: flex;
-  list-style: none;
-}
-.photos {
-  display: flex;
-  list-style: none;
-}
-.all-categories {
-  display: flex;
-  width: 176px;
-  height: 50px;
-  border-radius: 15px;
-  border-width: 1px;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.21;
-  color: #050505 50%;
+@media screen and (min-width: 375px) {
+  .container {
+    width: 390px;
+    margin: 0 auto;
+  }
 }
 
-.nav-scroller {
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0;
+    width: 738px;
+  }
+  
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1400px;
+  }
+} */
+/* .modal-check{
+  display: none;
+
+} */
+/* .favorete{
+  background-color: var(--var-dark);
+} */
+.eside{
+  padding-top: 24px;
+  background-color: var(--var-background);
+  color: var(--var-text);
+}
+.nav-scroller::-webkit-scrollbar {
+    width: 0px;
+    height: 201px;
+    border-radius: 12px;
+    background: var(--var-grey-scrollbar);
+  }
+
+.eside-bar-categories{
+  padding-top: 24px;
+  
+}
+.nav-scroller__item {
+  background-color: var(--var-background);
+  color: var(--var-grey-menu);
+}
+.pictures-gallery {
+  background-color: var(--var-background);
+  list-style:none;
+  display:flex;
+  column-gap: 16px;
+  row-gap:32px;
+  list-style:none;
+  flex-wrap:wrap;
+}
+.all-categories{
+background-color: var(--var-background);
+border: 1px solid var(--var-grey-menu);
+color: var(--var-grey-menu);
+}
+
+.photo-card{
+  position:relative;
+  display:flex; 
+  flex-wrap: wrap;
+}
+
+    .photo-card .card-title{
+      /* bANANA pANCAKES */
+    position: absolute;
+    display:flex;
+    flex-wrap:wrap;
+    width: 240px;
+    height: 18px;
+    left: 16px;
+    top: 146px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.3;
+    /* identical to box height, or 129% */
+    text-align: center;
+    text-transform: uppercase;
+    
+    color: #F8F8F8;
+    
+    }
+
+    .recipe-description{
+    display:flex;
+    /* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
+    
+    position: absolute;
+    width: 218px;
+    height: 32px;
+    left: 16px;
+    top: 192px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.3;
+    /* or 133% */
+    
+    color: #F8F8F8;
+    outline: none;
+    overflow: hidden;
+    
+    }
+
+.recipe_rating{
+      position:absolute;
+      display:flex;
+     color: #F8F8F8;
+     font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3; 
+    top:230px;
+    left:16px;
+    }
+    .all-stars{
+      position:absolute;
+      display:flex;
+      top:246px;
+      left:48px;
+      width:90px;
+      height:18px;
+    }
+    .good-recipes{
+      position:absolute;
+       display:flex;
+       top:240px;
+       left:141px;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      background: #9BB537;
+      color: #F8F8F8;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border:none;
+    } 
+    .label-check{
+      position:absolute;
+       display:flex;
+       top:16px;
+       left:212px;
+      background:#F8F8F8;
+    }
+
+/* ******************************************************************* */
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .section-elements{
+  display:flex;
+  margin-right:20px;
+  margin-bottom:20px;
+
+  list-style:none;
+ /* min-width:320px; */
+ }
+  .photos{
+  /* list-style:none; */
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 64px; */
+  
+
+  }
+  .all-categories{
+  
+  display:flex;
+  width:176px;
+  height:50px;
+  border-radius:15px;
+  border-width:1px;
+  align-items:center;
+  justify-content:center;
+
+  font-family:Inter;
+  font-weight:500;
+  font-size:18px;
+  line-height: 1.21;
+  
+  }
+  
+  .nav-scroller{
+    margin-bottom: 64px;
   overflow-y: auto;
   background-color: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 235px;
-  height: 416px;
-  margin-top: 30px;
-  margin-left: 75px;
-  gap: 58px;
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 16px;
+  width:235px;
+  height:416px;
+ background-color: var(--var-background);
+  gap:58px;
+  font-family:Inter;
+  font-weight:500;
+  font-size:16px;
   line-height: 20px;
-  color: #050505 50%;
-}
+  color:#050505 50%;
+  
+  }
+  
+  .nav-scroller__item {
+  color:#050505 30%;
+    display: flex;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+   text-align:left;
+  }
+  .nav-scroller__item:not(:last-child) {
+    border-right: 1px solid #eee;
+  }
+  .nav-scroller__item_active {
+    background-color:#9BB537;
+  }
+  .nav-scroller__item:not(.nav-scroller__item_active):hover {
+    background-color:#9BB537;
+  }
+  /* для активного пункта */
+  .nav-scroller__item_active:hover {
+    background-color: #fff176;
+  }
 
-.nav-scroller__item {
-  color: #050505 30%;
-  display: flex;
-  padding: 0.5rem 1.25rem;
-  text-decoration: none;
-  text-align: left;
-}
-.nav-scroller__item:not(:last-child) {
-  border-right: 1px solid #eee;
-}
-.nav-scroller__item_active {
-  background-color: #9bb537;
-}
-.nav-scroller__item:not(.nav-scroller__item_active):hover {
-  background-color: #9bb537;
-}
-/* для активного пункта */
-.nav-scroller__item_active:hover {
-  background-color: #fff176;
-}
-.load-more {
-  display: flex;
-  width: 200px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  border-radius: 4px;
-  border: none;
-  background: green;
-}
+  .picture{
+    width:250px;
+    height:287px;
+    border-radius:8px;
+   object-fit:cover;
+  }
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
+@media screen and (min-width: 375px) and (max-width: 767px) {
+   .section-elements{
+    display:flex;
 
-.pagination-wrapper {
+    margin-bottom:20px;
+
+    list-style:none;
+    /* max-width:700px; */
+   }
+   .photos{
+
+
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  /*margin-top:64px;*/
-  /*margin-bottom:40px;*/
-}
-.photo-card {
-  position: relative;
-  display: flex;
-}
-.picture {
-  display: flex;
-  width: 250px;
-  height: 287px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-.pictures-gallery {
-  display: flex;
-  width: auto;
-  height: auto;
-  column-gap: 16px;
-  row-gap: 32px;
-  list-style: none;
-  margin-left: 64px;
-  margin-top: 75px;
-  /*align-items:flex-end;*/
   flex-wrap: wrap;
+    }
+    .all-categories{
+    display:flex;
+
+    width:176px;
+    height:50px;
+    border-radius:15px;
+    border-width:1px;
+    align-items:center;
+    justify-content:center;
+    font-family:Inter;
+    font-weight:500;
+    font-size:18px;
+    line-height: 1.21;
+    
+    }
+    
+    .nav-scroller{
+
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    width: 254px;
+    height:416px;
+    margin-bottom: 64px;
+    /* margin-left:75px; */
+    gap:58px;
+    font-family:Inter;
+    font-weight:500;
+    font-size:16px;
+    line-height: 20px;
+    color:#050505 50%;
+    
+    }
+    
+    .nav-scroller__item {
+    color:#050505 30%;
+      display: flex;
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+     text-align:left;
+    }
+    .nav-scroller__item:not(:last-child) {
+      border-right: 1px solid #eee;
+    }
+    .nav-scroller__item_active {
+      background-color:#9BB537;
+    }
+    .nav-scroller__item:not(.nav-scroller__item_active):hover {
+      background-color:#9BB537;
+    }
+    /* для активного пункта */
+    .nav-scroller__item_active:hover {
+      background-color: #fff176;
+    }
+
+    .picture{
+      width:250px;
+      height:287px;
+      border-radius:8px;
+     object-fit:cover;
+    }
+    .pictures-gallery{
+    
+      display:flex;
+      width:auto;
+      height:auto;
+      column-gap: 16px;
+      row-gap:32px;
+      list-style:none;
+      /* margin-left:64px; */
+      /* margin-top:75px; */
+      /*align-items:flex-end;*/
+      flex-wrap:wrap;
+    }
 }
-.section-elements > .plug {
-  display: flex;
-  width: auto;
-  height: auto;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 768px) {
+  .section-elements{
+    display:flex;
+
+    margin-bottom:24px;
+    /* margin-top:108px; */
+    list-style:none;
+    /* width:700px; */
+   }
+   .photos{
+    display:flex;
+    list-style:none;
+    }
+    .all-categories{
+
+    display:flex;
+    width:176px;
+    height:50px;
+    border-radius:15px;
+    border-width:1px;
+    align-items:center;
+    justify-content:center;
+    font-family:Inter;
+    font-weight:500;
+    font-size:18px;
+    line-height: 1.21;
+
+    
+    }
+    
+    .nav-scroller{
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    width:176px;
+    height:416px;
+    margin-bottom: 64px;
+    margin-right: 32px;
+    gap:58px;
+    font-family:Inter;
+    font-weight:500;
+    font-size:16px;
+    line-height: 20px;
+    color:#050505 50%;
+    
+    }
+    
+    .nav-scroller__item {
+    color:#050505 30%;
+      display: flex;
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+     text-align:left;
+    }
+    .nav-scroller__item:not(:last-child) {
+      border-right: 1px solid #eee;
+    }
+    .nav-scroller__item_active {
+      background-color:#9BB537;
+    }
+    .nav-scroller__item:not(.nav-scroller__item_active):hover {
+      background-color:#9BB537;
+    }
+    /* для активного пункта */
+    .nav-scroller__item_active:hover {
+      background-color: #fff176;
+    }
+
+    .picture{
+
+      width:250px;
+      height:287px;
+      border-radius:8px;
+     object-fit:cover;
+    }
+    .pictures-gallery{
+     
+      display:flex;
+      width:auto;
+      height:auto;
+      column-gap: 16px;
+      row-gap:16px;
+
+      /* margin-left:64px; */
+      /* margin-top:75px; */
+      /*align-items:flex-end;*/
+      flex-wrap:wrap;
+    }
 }
+@media screen and (min-width: 1280px) {
+  .section-elements{
+    display:flex;
+    margin-right: 120px;
+    margin-bottom:42px; 
+    list-style:none;
+   /* min-width:1250px; */
+   }
+   .photos{
+    display:flex;
+    list-style:none;
+    }
+    .all-categories{
 
-.picture-pool {
-  display: flex;
-}
-.icon-plug {
-  display: flex;
-  width: 97px;
-  height: 83px;
-  /* margin-left:50%;*/
-}
-.plug-text {
-  display: flex;
-  /* margin-left:20%;*/
-}
-.icon-plug {
-  display: flex;
-  width: 97px;
-  height: 83px;
-}
-.plug-text {
-  display: flex;
-  width: 240px;
-  height: 72px;
-  margin-top: 32px;
-}
-.photo-card .card-title {
-  /* bANANA pANCAKES */
-  position: absolute;
-  width: 240px;
-  height: 18px;
-  left: 16px;
-  top: 146px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.3;
-  /* identical to box height, or 129% */
-  text-align: center;
-  text-transform: uppercase;
+    display:flex;
+    width:176px;
+    height:50px;
+    border-radius:15px;
+    border-width:1px;
+    align-items:center;
+    justify-content:center;
+    font-family:Inter;
+    font-weight:500;
+    font-size:18px;
+    line-height: 1.21;
+    border-radius: 15px;
 
-  color: #f8f8f8;
-}
-.photo-card .recipe-description {
-  display: flex;
-  /* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
+    }
+    
+    .nav-scroller{
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    width:235px;
+    height:416px;
+       margin-bottom: 64px;
+    /* margin-left:75px; */
+    gap:58px;
+    font-family:Inter;
+    font-weight:500;
+    font-size:16px;
+    line-height: 20px;
+    color:#050505 50%;
+    
+    }
+    
+    .nav-scroller__item {
+    color:#050505 30%;
+      display: flex;
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+     text-align:left;
+    }
+    .nav-scroller__item:not(:last-child) {
+      border-right: 1px solid #eee;
+    }
+    .nav-scroller__item_active {
+      background-color:#9BB537;
+    }
+    .nav-scroller__item:not(.nav-scroller__item_active):hover {
+      background-color:#9BB537;
+    }
+    /* для активного пункта */
+    .nav-scroller__item_active:hover {
+      background-color: #fff176;
+    }
 
-  position: absolute;
-  width: 218px;
-  height: 32px;
-  left: 16px;
-  top: 192px;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.3;
-  /* or 133% */
-
-  color: #f8f8f8;
-  outline: none;
-  overflow: hidden;
-}
-.photo-card .rating-list {
-  position: absolute;
-  display: flex;
-  list-style: none;
-}
-.button-text {
-  display: flex;
-  padding-left: -16px;
-}
-
-.photo-card .star-rating {
-  display: flex;
-}
-.photo-card .get-recipes {
-  position: absolute;
-
-  top: 240px;
-  left: 147px;
-  /* btn */
-
-  /* Auto layout */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 16px;
-  padding-right: 48px;
-  padding-bottom: 16px;
-  padding-left: 48px;
-  background: #9bb537;
-  border-radius: 8px;
-  color: #f8f8f8;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  font-style: normal;
-  /* Inside auto layout */
-
-  border: none;
-
-  /* See recipe */
-
-  width: 61px;
-  height: 15px;
-
-  font-size: 12px;
-  line-height: 1.25;
-  /* identical to box height */
-
-  color: #f8f8f8;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-.photo-card .stars {
-  position: absolute;
-  display: flex;
-
-  /*    width:90px;
-    height:18px;
-    top:234px;
+    .picture{
+      display:flex;
+      width:250px;
+      height:287px;
+      border-radius:8px;
+     object-fit:cover;
+    }
+    .pictures-gallery{
+     
+      display:flex;
+      width:auto;
+      height:auto;
+      column-gap: 16px;
+      row-gap:32px;
+      list-style:none;
+      /* margin-left:64px; */
+      /* margin-top:75px; */
+      /*align-items:flex-end;*/
+      flex-wrap:wrap;
+    }
+    .photo-card .card-title{
+      /* bANANA pANCAKES */
+    position: absolute;
+    display:flex;
+    flex-wrap:wrap;
+    width: 240px;
+    height: 18px;
+    left: 16px;
+    top: 146px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.3;
+    /* identical to box height, or 129% */
+    text-align: center;
+    text-transform: uppercase;
+    
+    color: #F8F8F8;
+    
+    }
+    .photo-card .recipe-description{
+    display:flex;
+    /* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
+    
+    position: absolute;
+    width: 218px;
+    height: 32px;
+    left: 16px;
+    top: 192px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.3;
+    /* or 133% */
+    
+    color: #F8F8F8;
+    outline: none;
+    overflow: hidden;
+    
+    }
+    .photo-card .rating-list{
+      position:absolute;
+      display:flex;
+    list-style:none;
+    top:239px;
+    left:42px;
+    }
+    .button-text{
+      display:flex;
+     padding-left:-16px;
+     
+    }
+    
+    .photo-card .star-rating{
+      display:flex;
+      
+    }
+    
+    .photo-card .good-recipes{
+      position:absolute;
+       display:flex;
+       top:240px;
+       left:141px;
+      padding: 8px 16px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      background: #9BB537;
+      color: #F8F8F8;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border:none;
+    } 
+    .photo-card .recipe-rating{
+      display:flex;
+      /* 4.5 */
+    position:absolute;
+    width: 22px;
+    height: 18px;
+    top:239px;
     left:16px;
-    /* stars */
-
-  /* Auto layout */
-  /*display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-
-width: 90px;
-height: 18px;
-
-
-/* Inside auto layout */
-  /*flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* Star 1 */
-
-  /*width: 18px;
-height: 18px;
-
-background: #EEA10C;
-border-radius: 1px;
-
-/* Inside auto layout */
-  /*flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Star 2 */
-
-  /*width: 18px;
-height: 18px;
-
-background: #EEA10C;
-border-radius: 1px;
-
-/* Inside auto layout */
-  /*flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* Star 3 */
-
-  /*width: 18px;
-height: 18px;
-
-background: #EEA10C;
-border-radius: 1px;
-
-/* Inside auto layout */
-  /*flex: none;
-order: 2;
-flex-grow: 0;
-
-
-/* Star 4 */
-
-  /*width: 18px;
-height: 18px;
-
-background: #EEA10C;
-border-radius: 1px;
-
-/* Inside auto layout */
-  /*flex: none;
-order: 3;
-flex-grow: 0;
-
-
-/* Star 5 */
-
-  /*width: 18px;
-height: 18px;
-
-background: rgba(248, 248, 248, 0.1);
-border-radius: 1px;
-
-/* Inside auto layout */
-  /*flex: none;
-order: 4;
-flex-grow: 0;*/
-}
-.photo-card .recipe-rating {
-  display: flex;
-  /* 4.5 */
-  position: absolute;
-  width: 22px;
-  height: 18px;
-  top: 239px;
-  left: 16px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.3;
-  /* identical to box height, or 129% */
-
-  color: #f8f8f8;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-.photo-card .recipe-button {
-  display: flex;
-}
-.rating {
-  font-size: 25px;
-  display: inline-flex;
-  align-items: flex-end;
-}
-
-.rating_body {
-  position: relative;
-}
-
-.rating_body::before {
-  content: '★★★★★';
-  display: block;
-}
-.rating_items {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-
-.rating_active {
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  overflow: hidden;
-  top: 0;
-}
-.rating_active::before {
-  content: '★★★★★';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  color: red;
-}
-
-.rating_value {
-  font-size: 100%;
-}
-
-.label-check {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+    /* identical to box height, or 129% */
+    
+    color: #F8F8F8;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    }
+    .photo-card .recipe-button{
+      display:flex;
+      
+    }
+    /*
+    .rating{
+      font-size: 25px;
+      display: inline-flex;
+      align-items: flex-end;
+    }
+    
+    .rating_body{
+     position: relative;
+    }
+    
+    .rating_body::before{
+      content: '★★★★★';
+      display: block;
+    }
+    .rating_items{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    }
+    
+     .rating_active{
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      overflow: hidden; 
+      top: 0;
+    
+    }
+     .rating_active::before{
+        content: '★★★★★';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        color: red;
+    }
+    
+    .rating_value{
+       font-size: 100%;
+    }
+    
+    .photo-card .label-check {
+      display: flex;
+      position: absolute;
+      top: 16px;
+      left:212px;
+      cursor: pointer;
+      font:FontAwesome;
+      color:#F8F8F8;
+      font-size:22px;
+    }*/
+    /* Hide the browser's default checkbox */
+    
+.photo-card .label-check {
   display: block;
   position: relative;
-  margin-top: 16px;
-  cursor: pointer;
+ top: 16px;
+ left:212px;
+   cursor: pointer;
 }
 /* Hide the browser's default checkbox */
-.label-check input {
+.photo-card .label-check input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
+  #fff;
 }
 
 /* Create a custom checkbox */
-.checkmark {
+/*.photo-card i {
   position: absolute;
   top: 0;
   left: 0;
-  height: 15px;
-  width: 15px;
+  height: 22px;
+  width: 22px;
   background-color: var(--primary-white-color);
   border: 1px black solid;
   fill: var(--primary-white-color);
-}
+}*/
 
 /* When the checkbox is checked, add a blue background */
-.label-check input:checked ~ .checkmark {
-  background-color: var(--selection-color);
-  fill: #f4f4fd;
+.photo-card .label-check input:checked ~ i {
+  background-color: #ffff;
+  color: #f4f4fd;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark::after {
-  content: '';
+.photo-card i::after {
+  content: "";
   position: absolute;
   display: none;
 }
-
+​
 /* Show the checkmark when checked */
-.label-check input:checked ~ .checkmark::after {
+.photo-card .label-check input:checked ~ i::after {
   display: block;
 }
-
+​
 /* Style the checkmark/indicator */
-.label-check .checkmark::after {
+.photo-card .label-check i::after {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+​
+    /*.icon::before {
+      font-family: 'Font Awesome\ 5 Free';
+      content: '&#xf08a';
+      font-weight: 900;
+    }*/
+     .change-color {
+      font:FontAwesome;
+     color:red;
+     }
+     .checked {
+      font:FontAwesome;
+      color: #EEA10C;
+    }
+    .star_color{
+      font:FontAwesome;
+      color: #F8F8F8;
+    }
+    .photo-card .recipe_rating{
+      position:absolute;
+      display:flex;
+     color: #F8F8F8;
+     font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3; 
+    top:230px;
+    left:16px;
+    }
+    .photo-card .all-stars{
+      position:absolute;
+      display:flex;
+      top:246px;
+      left:48px;
+      width:90px;
+      height:18px;
+    }
+    .pagination-wrapper{
+      display:flex;
+      width:100%;
+      margin: 0 auto;
+     justify-content:center;
+     align-items:center;
+     /*margin-top:64px;*/
+     /*margin-bottom:40px;*/
+    }
+
+    
+    .section-elements>.plug{
+       display:flex;
+      width:auto;
+      height:auto;
+      align-items:center;
+      justify-content:center;
+     
+    }
+   
+    
+    .icon-plug{
+      display:flex;
+      width:97px;
+      height:83px;
+    }
+    .plug-text{
+      display:flex;
+      width:240px;
+      height:72px;
+      margin-top:32px;
+    }
+    .photo-card .label-check{
+      position:absolute;
+       display:flex;
+       top:16px;
+       left:212px;
+      background:#F8F8F8;
+    }
+}
+.home-categories{
+  display:flex;
+  flex-direction: column ;
+  /* width:auto;
+  height:auto; */
+  background:#fff;
+}
+.tupar {
+  display: flex;
+  flex-wrap: wrap;
+  /* column-gap: 25px; */
+  align-items: center;
+}
+
+.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+/*  width:0;
+  height:0;*/
 }

@@ -1,44 +1,44 @@
-// const localStorageRecipes = localStorage.getItem("recipes");
-
-// if (localStorageRecipes) {
-//   const recipeList = document.querySelector(".recipe-list");
-
-//   const recipes = JSON.parse(localStorageRecipes);
-//   recipes.forEach(recipe => {
-//     const recipeItem = document.createElement("li");
-//     recipeItem.textContent = recipe.title;
-//     recipeList.appendChild(recipeItem);
-//   });
-// } else {
-//   document.querySelector(".favorites").textContent = "No favorites found.";
+// import axios from 'axios';
+// const popularRecipes = document.querySelector('.popular-recipes');
+// async function fetchArticles() {
+//   const url = `https://tasty-treats-backend.p.goit.global/api/recipes/popular`;
+//   try {
+//     const data = await axios.get(url);
+//     const popRecipes = data.data;
+//     // return popRecipes;
+//     let markup = '';
+//     popRecipes.forEach(recipe => {
+//       markup += `<div class="article-poprecipes">
+//         <img
+//           src="${recipe.preview}"
+//           alt="${recipe.title}"
+//         />
+//         <div class="article-poprecipes-content">
+//           <div class="article-poprecipes-title">${recipe.title}</div>
+//           <div class="article-poprecipes-text">${recipe.description}</div>
+//         </div>
+//       </div>`;
+//     });
+//     popularRecipes.insertAdjacentHTML('beforeend', markup);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
 // }
-
-// const localStorageRecipes = localStorage.getItem("recipes");
-
-// if (localStorageRecipes) {
-//   const recipeList = document.querySelector(".recipe-list");
-
-//   const recipes = JSON.parse(localStorageRecipes);
-//   recipes.forEach(recipe => {
-//     const recipeItem = document.createElement("li");
-//     recipeItem.textContent = recipe.title;
-//     recipeList.appendChild(recipeItem);
+// fetchArticles();
+// function loadPopularRecipes(popRecipes) {
+//   let markup = '';
+//   popRecipes.forEach(recipe => {
+//     markup += `<div class="article">
+//     <img
+//       src="${recipe.preview}"
+//       alt="${recipe.title}"
+//     />
+//     <div class="article-content">
+//       <div class="article-title">${recipe.title}</div>
+//       <div class="article-text">${recipe.description}</div>
+//     </div>
+//   </div>`;
 //   });
-// } else {
-//   document.querySelector(".favorites").textContent = "No favorites found.";
+//   popularRecipes.insertAdjacentHTML('beforeend', markup);
 // }
-
-function loadFavorites() {
-  const recipes = localStorage.getItem('recipes');
-  if (!recipes) {
-    document.getElementById('favorites').innerHTML = 'No favorites found.';
-    return;
-  }
-  const recipeList = document.getElementById('recipe-list');
-  for (const i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
-    const recipeItem = document.createElement('li');
-    recipeItem.textContent = recipe.title;
-    recipeList.appendChild(recipeItem);
-  }
-}
+// loadPopularRecipes(popRecipes);

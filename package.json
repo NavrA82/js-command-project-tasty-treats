@@ -2,10 +2,10 @@
   "name": "tasty-treats-command-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "/https://navra82.github.io/js-command-project-tasty-treats",
+  "homepage": "https://Vycheslav1/tasty-treats-command-project",
   "scripts": {
     "start": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /js-command-project-tasty-treats/"
+    "build": "parcel build src/*.html --public-url /tasty-treats-command-project/"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "loadash": "^1.0.0",
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
     "buffer": "^6.0.3",
+    "font-awesome": "^4.7.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"

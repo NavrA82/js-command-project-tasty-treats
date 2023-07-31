@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import Notiflix from 'notiflix';
+
 import Pagination from 'tui-pagination';
 
 import 'tui-pagination/dist/tui-pagination.css';
@@ -33,7 +35,7 @@ let perPage;
 const recipes = document.querySelector('.nav-scroller');
 
 const gallery = document.querySelector('.photos .pictures-gallery');
-const things = document.querySelector('.photos');
+//const things = document.querySelector(".photos");
 const allCategories = document.querySelector('.all-categories');
 
 const plugCover = document.querySelector('.plug');
@@ -58,6 +60,10 @@ sort = '';
 //  return results;
 //};
 
+//document.addEventListener("DOMContentLoaded",()=>{
+
+//});
+
 function renderCardsList(foods) {
   //console.log(foods);
   //localStorage.setItem("results",foods);
@@ -65,27 +71,23 @@ function renderCardsList(foods) {
   let markup = ``;
 
   for (let i = 0; i < pictures[0].results.length; i += 1) {
-    markup += `<li>
-    <div class="photo-card">
-      <img class="picture"  src=${pictures[0].results[i].preview} alt=${pictures[0].results[i].tags[0]} loading="lazy" />
-        <h2 class="card-title">${pictures[0].results[i].title}</h2>
-          <p class="recipe-description">${pictures[0].results[i].description}</p>
-            <div class="rating" >
-              <div class="rating_body">
-                <div class="rating_active"></div>
-                <div class="rating_items"></div>
-              </div>  
-              <div class="rating_value" >${pictures[0].results[i].rating}</div>  
-            </div>
-          <button type="button" class="get-recipes">See recipe</button>
-    </div>
-    <label class="label-check">
-    <input class="modal-check" type="checkbox" id="check-item" />
-    <svg class="checkmark">
-      <use href="./css/images/sprite/icons.svg#icon-heart"></use>
-    </svg>
-    </label>
-    </li>`;
+    let stars = `<div class="all-stars">`;
+    for (let j = 0; j < 5; j += 1) {
+      if (j < Math.floor(pictures[0].results[i].rating)) {
+        stars += `<span class="fa fa-star checked"></span>`;
+      } else {
+        stars += `<span class="fa fa-star star_color"></span>`;
+      }
+    }
+    stars += `</div>`;
+    markup +=
+      `<li><div class="photo-card"><img class="picture"  src=${pictures[0].results[i].preview} alt=${pictures[0].results[i].tags[0]} loading="lazy" />
+<h2 class="card-title">${pictures[0].results[i].title}</h2><p class="recipe-description">${pictures[0].results[i].description}</p><p class="recipe_rating"}>${pictures[0].results[i].rating}</p>` +
+      stars +
+      `<button type="button" class="good-recipes">See recipe</button><label id="brand" class="label-check">
+<input class="modal-check " type="checkbox" id="check-item" />
+<i class="fa fa-heart" ></i>
+</label></div></li>`;
   } //};
 
   const check = document.querySelector('.photos .pictures-gallery');
@@ -95,22 +97,29 @@ function renderCardsList(foods) {
   check.addEventListener('click', evt => {
     const modal = document.querySelectorAll('.modal-check');
 
+    const heart = document.querySelectorAll(
+      '.photo-card .label-check .fa-heart'
+    );
+    //console.log(heart);
+
     for (let i = 0; i < pictures[0].results.length; i += 1) {
       if (modal[i].checked) {
-        localStorage.setItem('favorites', pictures[i]);
+        evt.target.classList.toggle('change-color');
+        console.log(i);
+        localStorage.setItem('favorites', JSON.stringifypictures[i]);
       } else {
         for (let j = 0; j < favorites.length; j = +1) {
           if (favorites[j] === pictures[i]) {
             favorites.splice(j, 1);
 
-            localStorage.setItem('favorites', favorites);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
           }
         }
       }
     }
   });
 
-  //gallery.addEventListener("load",()=>{
+  //document.addEventListener("change",()=>{
 
   //const ratings=document.querySelectorAll(".rating");
   // console.log("hello");
@@ -206,7 +215,11 @@ axios
       //  /<p class="plug-text">Sorry, there are no images matching your search query. Please try again</p></div>`;
       //plugCover.classList.toggle(".is-hidden");
 
-      return;
+      Notiflix.Report.warning(
+        'Warning',
+        'Sorry, there are no images matching your search query. Please try again',
+        'Warning'
+      );
     } else {
       pictures.push(response.data);
     }
@@ -220,6 +233,11 @@ axios
 const category_url =
   'https://tasty-treats-backend.p.goit.global/api/categories';
 
+//const fetchOategiries = async () => {
+// const response = await axios.get(URL);
+//  const results = await response;
+// return results;
+//};
 axios.get(category_url).then(response => {
   const recipes_markup = response.data
     .map(
@@ -249,8 +267,13 @@ axios.get(category_url).then(response => {
 
               //    gallery.innerHTML=`<div class="plug"><svg class="icon-plug"><use href="./images/sprite/icons.svg#icon-elements"></use></svg>
               //    <p class="plug-text">Sorry, there are no images matching your search query. Please try again</p></div>`;
-
-              return;
+              Notiflix.Report.failure(
+                'Error',
+                'Sorry, there are no images matching your search query. Please try again',
+                function retry() {
+                  return;
+                }
+              );
             } else {
               pictures.push(response.data);
 
@@ -293,25 +316,26 @@ allCategories.addEventListener('click', () => {
     });
 });
 
-function initRatings() {
+/*function initRatings(){
   let ratingActive, ratingValue;
-  for (let index = 0; index < ratings.length; index++) {
-    const rating = ratings[index];
-    initRating(rating);
+  for (let index=0; index<ratings.length; index++){
+      const rating=ratings[index];
+          initRating(rating);
   }
 
-  function initRating(rating) {
-    initRatingVars(rating);
-    setRatingActiveWidth();
+  function initRating(rating){
+      initRatingVars(rating);
+      setRatingActiveWidth();
   }
 
-  function initRatingVars(rating) {
-    ratingActive = rating.querySelectorAll('.rating_active')[0];
-    ratingValue = rating.querySelectorAll('.rating_value')[0];
+  function initRatingVars(rating){
+      ratingActive=rating.querySelectorAll('.rating_active')[0];
+      ratingValue=rating.querySelectorAll('.rating_value')[0];
   }
 
-  function setRatingActiveWidth(index = ratingValue.innerHTML) {
-    const ratingActiveWidth = index / 0.05;
-    ratingActive.style.width = `${ratingActiveWidth}%`;
+
+  function setRatingActiveWidth(index=ratingValue.innerHTML){        
+      const ratingActiveWidth = index/0.05;
+      ratingActive.style.width=`${ratingActiveWidth}%`;
   }
-}
+}*/

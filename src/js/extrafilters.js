@@ -47,6 +47,8 @@ const {
   allCategoriesGallery,
 } = refs;
 
+// const recipes = document.querySelector('.nav-scroller__item');
+// console.log(recipes);
 //================================================================
 //                  управління
 //================================================================
@@ -55,16 +57,19 @@ resetBtnTotalExtraFiltersForm.addEventListener('click', () => {
   timeSelectorFiltersForm.value = '';
   areaSelectorFiltersForm.value = '';
   ingredientsSelectorFiltersForm.value = '';
+  allCategoriesGallery.innerHTML = '';
 });
 
 searchResetBtnInputExtraFiltersForm.addEventListener('click', () => {
   inputExtraFiltersForm.value = '';
   searchResetBtnInputExtraFiltersForm.hidden = true;
+  allCategoriesGallery.innerHTML = '';
 });
 
 searchResetBtnInputExtraFiltersForm.hidden = true;
 
-export function onFetchError() {
+export function onFetchError(error) {
+  console.log(error);
   Notiflix.Report.failure(
     '&#128532; Something went wrong!',
     'Try reloading the page!',
@@ -84,7 +89,7 @@ export function onFetchError() {
 // async function markUpOptionsArr(api) {
 //   const data = await getOptions(api);
 //   return data.reduce((markUp, currentName) => {
-//     return markUp + `<option>${currentName.name}</option>`;
+//     return markUp + `<option class="option">${currentName.name}</option>`;
 //   }, '');
 // }
 
@@ -97,52 +102,6 @@ export function onFetchError() {
 // addOptions('areas', areaSelectorFiltersForm);
 // addOptions('ingredients', ingredientsSelectorFiltersForm);
 
-const fetchAreas = async () => {
-  try {
-    const response = await axios.get(`${BASE_URL}/areas`);
-    return response.data;
-  } catch (error) {
-    onFetchError();
-  }
-};
-
-fetchAreas()
-  .then(data => {
-    data.forEach(el => {
-      const optionsElement = document.createElement('option');
-      optionsElement.value = el.id;
-      optionsElement.textContent = el.name;
-      areaSelectorFiltersForm.appendChild(optionsElement);
-    });
-  })
-  .catch(error => {
-    onFetchError(error);
-  });
-
-//====================== 2 інгрідієнти ====================
-
-const fetchIngredients = async () => {
-  try {
-    const response = await axios.get(`${BASE_URL}/ingredients`);
-    return response.data;
-  } catch (error) {
-    onFetchError(error);
-  }
-};
-
-fetchIngredients()
-  .then(data => {
-    data.forEach(el => {
-      const optionsElement = document.createElement('option');
-      optionsElement.value = el.id;
-      optionsElement.textContent = el.name;
-      ingredientsSelectorFiltersForm.appendChild(optionsElement);
-    });
-  })
-  .catch(error => {
-    onFetchError(error);
-  });
-
 //================================================================
 //                 запит
 //================================================================
@@ -151,89 +110,106 @@ formExtraFilters.addEventListener('click', event => {
   event.preventDefault();
 });
 
-// // Якщо користувач повністю очищує поле пошуку - запит виконується за рецептами попередньо обраної категорії
-// // або рецептами, що належать до усіх категорій(в залежності від поточного вибору користувача у блоці з переліком категорій).
-// // Також при реалізації пошуку слід виконувати санітизацію введеного рядка методом trim(), що вирішить проблему, коли в полі
-// // введені тільки пробіли або якщо вони є на початку і в кінці введеного ключового слова"
-
-// async function searchRecipe(event) {
-//   const query = String(inputExtraFiltersForm.value.trim());
-//   console.log(!query);
-//   if (!query) {
-//     Notiflix.Report.failure('Please,input the valid query');
-//     inputExtraFiltersForm.value = '';
-//     searchResetBtnInputExtraFiltersForm.hidden = true;
-//     //функція Вячеслава по останній обраній категорії
-//   }
-//   if (query !== '') {
-//     searchResetBtnInputExtraFiltersForm.hidden = false;
-//     getData();
-//     // функція Вячеслава показати рецепти з урахуванням веденого тайтлу
-//     // await showRecipes(`${BASE_URL}/recipes`, {
-//     //   limit: limitCount,
-//     //   title: query.value,
-//     // });
-//     //функція Вячеслава про пагінацію з урахуванням веденого тайтлу
-//     //   await showPagination(`${BASE_URL}/recipes`, {
-//     //     limit: limitCount,
-//     //     title: query.value,
-//     //   });
-//     return;
-//   }
-//   // console.log(value);
-// }
-
 inputExtraFiltersForm.addEventListener(
   'input',
   debounce(handleSearchInput, 300)
 );
 
-async function getRecipes() {
+const recipes1 = [];
+
+async function getRecipesByKeyword(keyword = '', category, ingredients, area) {
   try {
-    const response = await axios.get(`${BASE_URL}/recipes/`);
+    const response = await axios.get(`${BASE_URL}/recipes`, {
+      params: {
+        tags: keyword,
+        category: category,
+        area: area,
+        ingredients: ingredients,
+      },
+    });
+
     return response.data;
   } catch (error) {
-    // onFetchError();
-    console.log(error);
+    console.error(error);
+    onFetchError();
   }
 }
 
-// getRecipes()
-//      .then(data => {
-//        // console.log(data.results);
-//        let response = data.results;
-//        response.map(el => console.log(el.tags));
-//      })
-//      .catch(error => {
-//        // onFetchError(error);
-//        console.log(error);
-//      });
+getRecipesByKeyword().then(data => {
+  let response = data.results;
+  // console.log(response);
+  response.map(resipe => {
+    recipes1.push(resipe);
+    // console.log(recipes1);
+    return recipes1;
+  });
+});
 
-// Функція для виведення рецептів зі співпадаючим ключовим у консоль
+function getOptions(keyWord, recipes) {
+  return recipes.filter(recipe => {
+    // console.log();
 
-// Функція обробки події onInput з використанням Debounce
-async function handleSearchInput(event) {
-  const keyword = event.target.value.trim();
+    const equal = recipe.tags;
 
-  const recipe = await getRecipes();
+    // Определить совпадает ли то что мы вбили в input
+    // тегам внутри массива
 
-  // if (keyword === '') {
-  //   // const results = await getRecipesByCategory(category); - функція Вячеслава по виклику усіх категорії або певної категорії
-  //   // showMatchingRecipes(recipes, keyword);
-  // } else {
-
-  //   // showMatchingRecipes(recipes, keyword);
-
-  // }
-
-  // getRecipes()
-  //   .then(data => {
-  //     // console.log(data.results);
-  //     let response = data.results;
-  //     response.map(el => console.log(el.tags));
-  //   })
-  //   .catch(error => {
-  //     // onFetchError(error);
-  //     console.log(error);
-  //   });
+    const regex = new RegExp(keyWord, 'gi');
+    return equal
+      .map(el => el)
+      .join(' ')
+      .match(regex);
+  });
 }
+
+function handleSearchInput() {
+  const options = getOptions(this.value, recipes1);
+  const html = options
+    .map(recipe => {
+      const regex = new RegExp(this.value, 'gi');
+      const stationName = recipe.tags.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`
+      );
+      return `<li><span>${stationName}</span></li>`;
+    })
+    .slice(0, 10)
+    .join('');
+  allCategoriesGallery.innerHTML = html;
+}
+
+// async function handleSearchInput(event) {
+//   searchValue = event.target.value.trim();
+//   // console.log(searchValue);
+//   filteredSearch();
+// }
+
+// //функция фильтрации товаров
+
+// function filteredSearch() {
+//   const rgx = new RegExp(searchValue);
+//   let filteredCardsData = cards.filter(card => {
+//     if (rgx.test(card.tags)) {
+//       return true;
+//     }
+//     return false;
+//   });
+//   allCategoriesGallery.innerHTML = generateMarkup(filteredCardsData).join('');
+// }
+
+// async function getRecipesByKeyword(keyword = '', category, ingredients, area) {
+//   try {
+//     const response = await axios.get(`${BASE_URL}/recipes`, {
+//       params: {
+//         tags: keyword,
+//         category: category,
+//         area: area,
+//         ingredients: ingredients,
+//       },
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error(error);
+//     // onFetchError();
+//   }
+// }

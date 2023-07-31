@@ -2,6 +2,7 @@ function theme() {
   const checkbox = document.querySelector(
     '.header-switch input[type="checkbox"]'
   );
+
   const el = document.documentElement;
   checkbox.addEventListener('change', () => {
     if (el.hasAttribute('data-theme')) {
@@ -21,6 +22,7 @@ function theme() {
       checkbox.checked = true;
     }
   }
+
   if (localStorage.getItem('theme') !== null) {
     el.setAttribute('data-theme', 'dark');
     checkbox.checked = true;
@@ -28,6 +30,7 @@ function theme() {
     setThemeFromMediaQuery();
     updateThemeByTime();
   }
+
   function updateThemeByTime() {
     const currentHour = new Date().getHours();
     if (currentHour >= 18 || currentHour < 6) {

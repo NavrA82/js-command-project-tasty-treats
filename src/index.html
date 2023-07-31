@@ -16,11 +16,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/all.js"></script>
   </head>
-
   <body>
     <!-- -----------------------HEDER------------------------------------------ -->
     <include src="./partials/header.html"></include>
@@ -30,14 +33,11 @@
       <include src="./partials/hero.html"></include>
 
       <!-- ------------------------ Categories ------------------------- -->
-      <section class="container container-wrap">
-        <div class="categories-all-main">
-          <include src="./partials/popular_recipes.html"></include>
-        </div>
-
-        <div class="cards-filter">
-          <include src="./partials/extrafilters.html"></include>
-          <include src="./partials/categories.html"></include>
+      <section class="favorete">
+        <div class="container">
+          <div class="cards-filter">
+            <include src="./partials/categories.html"></include>
+          </div>
         </div>
       </section>
 
@@ -45,6 +45,7 @@
       <include src="./partials/recipe.html"></include>
       <include src="./partials/scrollup.html"></include>
       <include src="./partials/create_order.html"></include>
+      <include src="./partials/add_rating.html"></include>
     </main>
 
     <script type="module" src="./index.js"></script>

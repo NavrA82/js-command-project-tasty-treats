@@ -24,5 +24,5 @@ button {
     width: 35px;
     height: 35px;
     fill: var(--accent-color);
-    stroke: var(--accent-color);
+    stroke: none;
 }

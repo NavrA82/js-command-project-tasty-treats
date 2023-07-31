@@ -18,11 +18,9 @@
           >tasty<span class="header-logo-treats">treats.</span></a
         >
         <div class="header-svg">
-          <img
-            class="header-shopping section__button section__button1"
-            src="./images/svg/shopping-cart.svg"
-            alt="My Happy SVG-burger"
-          />
+          <svg class="header-shopping section__button section__button1">
+            <use href="./images/sprite/icons.svg#icon-shopping-cart"></use>
+          </svg>
           <!-- order now  -->
           <div class="modal modal1">
             <div class="modal__main">
@@ -74,13 +72,15 @@
               />
             </div>
           </div>
-          <img
-            class="header-img header-burger js-header-open-menu"
+          <svg class="header-img header-burger js-header-open-menu">
+            <use href="./images/sprite/icons.svg#icon-align-justify"></use>
+          </svg>
+          <!-- <img
             aria-expanded="false"
             aria-controls="header-mobile-menu"
             src="./images/svg/align-justify.svg"
             alt="My Happy SVG-burger"
-          />
+          /> -->
           <div class="js-swither header-switch">
             <label for="pill" class="switch">
               <input
@@ -123,5 +123,4 @@
       </label>
     </div>
   </div>
-  <script src="./js/header-burger.js"></script>
 </header>

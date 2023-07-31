@@ -1,6 +1,7 @@
 @media screen and (min-width: 375px) {
   .popular-recipes {
     width: 332px;
+    margin-right: 32px;
     margin-bottom: 10px;
   }
   .article-poprecipes {
@@ -23,7 +24,7 @@
     font-size: 14px;
     line-height: 18px;
     text-transform: uppercase;
-    color: #050505;
+    color: var(--var-dark);
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -43,7 +44,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: rgba(5, 5, 5, 0.8);
+    color: var(--var-grey);
     text-align: left;
     /* flex: none;
     order: 1;
@@ -65,7 +66,7 @@
     font-size: 20px;
     line-height: 28px;
     text-transform: uppercase;
-    color: #050505;
+    color: var(--var-dark);
     margin-bottom: 20px;
   }
 
@@ -82,6 +83,7 @@
   .popular-recipes {
     width: 176px;
     margin-bottom: 16px;
+    margin-right: 32px;
   }
 
   .article-poprecipes img {
@@ -99,7 +101,7 @@
   }
 
   .article-poprecipes {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
   .article-poprecipes-content {
     width: 120px;
@@ -111,38 +113,38 @@
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 32px;
+    margin-right: 32px;
   }
-
   .article-poprecipes-title {
     width: 120px;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .popular-recipes-title {
-    font-size: 20px;
-    line-height: 28px;
+  @media screen and (min-width: 1280px) {
+    .popular-recipes-title {
+      font-size: 20px;
+      line-height: 28px;
 
-    margin-bottom: 32px;
-  }
+      margin-bottom: 32px;
+    }
 
-  .popular-recipes {
-    width: 235px;
-    margin-bottom: 10px;
-  }
-  .article-poprecipes img {
-    margin-right: 16px;
-  }
-  .article-poprecipes-title {
-    width: 155px;
-  }
-  .article-poprecipes-content {
-    width: 155px;
-  }
-  .article-poprecipes-text {
-    width: 155px;
+    .popular-recipes {
+      width: 235px;
+      margin-bottom: 10px;
+    }
+    .article-poprecipes img {
+      margin-right: 16px;
+    }
+    .article-poprecipes-title {
+      width: 155px;
+    }
+    .article-poprecipes-content {
+      width: 155px;
+    }
+    .article-poprecipes-text {
+      width: 155px;
+    }
   }
 }
