@@ -82,7 +82,7 @@ function renderCardsList(foods) {
     stars += `</div>`;
     markup +=
       `<li><div class="photo-card"><img class="picture"  src=${pictures[0].results[i].preview} alt=${pictures[0].results[i].tags[0]} loading="lazy" />
-<h2 class="card-title">${pictures[0].results[i].title}</h2><p class="recipe-description">${pictures[0].results[i].description}</p><p class="recipe_rating"}>${pictures[0].results[i].rating}</p>` +
+<h2 class="card-title">${pictures[0].results[i].title}</h2><p class="recipe-description">${pictures[0].results[i].description}</p><p class="recipe_rating">${pictures[0].results[i].rating}</p>` +
       stars +
       `<button type="button" class="good-recipes">See recipe</button><label id="brand" class="label-check">
 <input class="modal-check " type="checkbox" id="check-item" />

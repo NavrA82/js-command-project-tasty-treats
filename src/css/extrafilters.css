@@ -19,24 +19,18 @@ svg {
   display: block;
 }
 
-.extra-filters-section {
-  /* display: flex; */
-  background-color: var(--var-background);
-  /* flex-direction: column; */
-  /* width: 624px; */
-  /* margin-top: 40px; */
-
-  text-align: center;
+.extra-filters-reset-btn-wrap{
+  display: flex;
+  justify-content: end;
+  margin-top: 14px;
 }
 
 .extra-filters-form {
   display: flex;
-  width: 335px;
-  height: auto;
-  display: flex;
-  gap: 14px;
+  /* height: auto; */
+  gap: 16px;
   /* flex-direction: row; */
-  align-items: center;
+
   flex-wrap: wrap;
 }
 
@@ -47,8 +41,10 @@ svg {
   color: var(--var-grey);
 }
 
+
 .extra-filters-form-label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -203,11 +199,13 @@ option:is(:hover, :focus) {
   display: flex;
   flex-direction: column;
 }
-
-@media screen and (min-width: 768px) {
-  .extra-filters-section {
-    /* margin-top: 80px; */
+@media screen and (max-width: 767px) {
+  .extra-filters-form{
+    gap: 14px;
   }
+}
+@media screen and (min-width: 768px) {
+
 
   .extra-filters-form {
     gap: 16px;
@@ -241,10 +239,6 @@ option:is(:hover, :focus) {
     line-height: 1.25;
   }
 
-  .extra-filters-reset-btn {
-    /* margin-left: 439px; */
-  }
-
   .form-el-time,
   .form-el-area {
     flex-basis: 0;
@@ -259,17 +253,10 @@ option:is(:hover, :focus) {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .extra-filters-section {
-    /* margin-top: 100px; */
-    /* width: 780px; */
-  }
-  /* 
-  .extra-filters-form {
-    width: 780px;
-  } */
+@media screen and (min-width: 1280px) {
 
-  .extra-filters-reset-btn {
-    /* margin-left: 674px; */
+
+  .extra-filters-form-wrap {
+    width: 782px;
   }
 }

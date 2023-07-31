@@ -1,7 +1,7 @@
 @media screen and (min-width: 375px) {
   .popular-recipes {
     width: 332px;
-    margin-right: 32px;
+    /* margin-right: 32px; */
     margin-bottom: 10px;
   }
   .article-poprecipes {
@@ -83,7 +83,7 @@
   .popular-recipes {
     width: 176px;
     margin-bottom: 16px;
-    margin-right: 32px;
+    /* margin-right: 32px; */
   }
 
   .article-poprecipes img {
@@ -113,7 +113,7 @@
     font-size: 14px;
     line-height: 18px;
     margin-bottom: 32px;
-    margin-right: 32px;
+    /* margin-right: 32px; */
   }
   .article-poprecipes-title {
     width: 120px;

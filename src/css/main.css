@@ -38,9 +38,6 @@ body {
   background-color: var(--var-background);
   color: var(--primary-black-color);
 }
-* {
-  box-sizing: border-box;
-}
 a {
   text-decoration: none;
 }
@@ -67,13 +64,12 @@ svg {
   margin: 0 auto;
   outline: 2px solid tomato;
 }
-.container-wrap {
+/* .container-wrap {
   display: flex;
   gap: 32px;
-}
+} */
 
-.cards-filter {
-}
+
 @media screen and (max-width: 767px) {
   .container {
     max-width: 375px;

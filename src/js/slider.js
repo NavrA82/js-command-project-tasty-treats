@@ -20,7 +20,7 @@ const refs={
 
 
 getAllEvents().then(({data})=>{
-    console.log(data)
+    // console.log(data)
     const markup = createMarkup(data);
     refs.images.insertAdjacentHTML('beforeend',markup);     
     // Swiper.use([Navigation, Pagination]);
