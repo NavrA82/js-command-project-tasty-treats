@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA,S","sources":["src/favorites-page.js"],"sourcesContent":["import './js/header-burger';\nimport './js/create-order.js';\nimport './js/scroll-up';\nimport './js/theme-switcher';\nimport './js/recipe';\nimport './js/favorites';\n"],"names":["parcelRequire"],"version":3,"file":"favorites-page.d2536f2e.js.map"}
