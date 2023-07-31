@@ -2,10 +2,10 @@
   "name": "tasty-treats-command-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Vycheslav1/tasty-treats-command-project",
+  "homepage": "https://navra82.github.io/js-command-project-tasty-treats/",
   "scripts": {
     "start": "parcel src/*.html --open",
-    "build": "parcel build src/*.html --public-url /tasty-treats-command-project/"
+    "build": "parcel build src/*.html --public-url /js-command-project-tasty-treats/"
   },
   "repository": {
     "type": "git",
