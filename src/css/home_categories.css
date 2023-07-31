@@ -1,8 +1,8 @@
-*::before,
+/* *::before,
 *::after {
   margin: 0;
   padding: 0;
-}
+} */
 /* .container{
   margin:0 auto;
  width:1200px;
@@ -73,9 +73,9 @@
   flex-wrap:wrap;
 }
 .all-categories{
-background-color: var(--var-background);
-border: 1px solid var(--var-grey-menu);
-color: var(--var-grey-menu);
+  background-color: var(--var-background);
+  border: 1px solid var(--var-grey-menu);
+  color: var(--var-grey-menu);
 }
 
 .photo-card{
@@ -84,131 +84,130 @@ color: var(--var-grey-menu);
   flex-wrap: wrap;
 }
 
-    .photo-card .card-title{
-      /* bANANA pANCAKES */
-    position: absolute;
-    display:flex;
-    flex-wrap:wrap;
-    width: 240px;
-    height: 18px;
-    left: 16px;
-    top: 146px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.3;
-    /* identical to box height, or 129% */
-    text-align: center;
-    text-transform: uppercase;
-    
-    color: #F8F8F8;
-    
-    }
+.photo-card .card-title{
+    /* bANANA pANCAKES */
+  position: absolute;
+  display:flex;
+  flex-wrap:wrap;
+  width: 240px;
+  height: 18px;
+  left: 16px;
+  top: 146px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+  /* identical to box height, or 129% */
+  text-align: center;
+  text-transform: uppercase;
+  
+  color: #F8F8F8;
+}
 
-    .recipe-description{
-    display:flex;
-    /* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
-    
-    position: absolute;
-    width: 218px;
-    height: 32px;
-    left: 16px;
-    top: 192px;
-    
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.3;
-    /* or 133% */
-    
-    color: #F8F8F8;
-    outline: none;
-    overflow: hidden;
-    
-    }
+.recipe-description{
+  display:flex;
+  /* Banana pancakes are a fluffy and sweet breakfast dish made with mashed ripe bananas, eggs, flour, and a touch of cinnamon, cooked to perfection on a skillet and served with toppings of your choice. */
+  
+  position: absolute;
+  width: 218px;
+  height: 32px;
+  left: 16px;
+  top: 192px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+  /* or 133% */
+  
+  color: #F8F8F8;
+  outline: none;
+  overflow: hidden;
+  
+}
 
 .recipe_rating{
-      position:absolute;
-      display:flex;
-     color: #F8F8F8;
-     font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.3; 
-    top:230px;
-    left:16px;
-    }
-    .all-stars{
-      position:absolute;
-      display:flex;
-      top:246px;
-      left:48px;
-      width:90px;
-      height:18px;
-    }
-    .good-recipes{
-      position:absolute;
-       display:flex;
-       top:240px;
-       left:141px;
-      padding: 8px 16px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 8px;
-      background: #9BB537;
-      color: #F8F8F8;
+    position:absolute;
+    display:flex;
+    color: #F8F8F8;
     font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    border:none;
-    } 
-    .label-check{
-      position:absolute;
-       display:flex;
-       top:16px;
-       left:212px;
-      background:#F8F8F8;
-    }
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.3; 
+  top:230px;
+  left:16px;
+}
+.all-stars{
+  position:absolute;
+  display:flex;
+  top:246px;
+  left:48px;
+  width:90px;
+  height:18px;
+}
+.good-recipes{
+  position:absolute;
+  display:flex;
+  top:240px;
+  left:141px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #9BB537;
+  color: #F8F8F8;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border:none;
+} 
+.label-check{
+  position:absolute;
+  display:flex;
+  top:16px;
+  left:212px;
+  background:#F8F8F8;
+}
+
+.picture{
+  display: block;
+  width: 100%;
+  height:100%;
+}
 
 /* ******************************************************************* */
 
-@media screen and (min-width: 320px) and (max-width: 374px) {
+@media screen and (max-width: 767px) {
   .section-elements{
   display:flex;
   margin-right:20px;
   margin-bottom:20px;
-
   list-style:none;
  /* min-width:320px; */
- }
+  }
   .photos{
-  /* list-style:none; */
-  display: flex;
-  flex-wrap: wrap;
-  /* gap: 64px; */
-  
-
+    /* list-style:none; */
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 64px; */
   }
   .all-categories{
-  
-  display:flex;
-  width:176px;
-  height:50px;
-  border-radius:15px;
-  border-width:1px;
-  align-items:center;
-  justify-content:center;
-
-  font-family:Inter;
-  font-weight:500;
-  font-size:18px;
-  line-height: 1.21;
-  
+    display:flex;
+    width:176px;
+    height:50px;
+    border-radius:15px;
+    border-width:1px;
+    align-items:center;
+    justify-content:center;
+    font-family:Inter;
+    font-weight:500;
+    font-size:18px;
+    line-height: 1.21;
   }
   
   .nav-scroller{
@@ -218,7 +217,7 @@ color: var(--var-grey-menu);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width:235px;
   height:416px;
- background-color: var(--var-background);
+  background-color: var(--var-background);
   gap:58px;
   font-family:Inter;
   font-weight:500;
@@ -229,11 +228,11 @@ color: var(--var-grey-menu);
   }
   
   .nav-scroller__item {
-  color:#050505 30%;
+    color:#050505 30%;
     display: flex;
     padding: 0.5rem 1.25rem;
     text-decoration: none;
-   text-align:left;
+    text-align:left;
   }
   .nav-scroller__item:not(:last-child) {
     border-right: 1px solid #eee;
@@ -248,105 +247,14 @@ color: var(--var-grey-menu);
   .nav-scroller__item_active:hover {
     background-color: #fff176;
   }
-
   .picture{
-    width:250px;
-    height:287px;
-    border-radius:8px;
-   object-fit:cover;
+    width: 335px;
+    height: 335px;
+    border-radius: 8px;
+    /* object-fit: cover; */
   }
-
 }
-@media screen and (min-width: 375px) and (max-width: 767px) {
-   .section-elements{
-    display:flex;
 
-    margin-bottom:20px;
-
-    list-style:none;
-    /* max-width:700px; */
-   }
-   .photos{
-
-
-  display: flex;
-  flex-wrap: wrap;
-    }
-    .all-categories{
-    display:flex;
-
-    width:176px;
-    height:50px;
-    border-radius:15px;
-    border-width:1px;
-    align-items:center;
-    justify-content:center;
-    font-family:Inter;
-    font-weight:500;
-    font-size:18px;
-    line-height: 1.21;
-    
-    }
-    
-    .nav-scroller{
-
-    overflow-y: auto;
-    background-color: #fff;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    width: 254px;
-    height:416px;
-    margin-bottom: 64px;
-    /* margin-left:75px; */
-    gap:58px;
-    font-family:Inter;
-    font-weight:500;
-    font-size:16px;
-    line-height: 20px;
-    color:#050505 50%;
-    
-    }
-    
-    .nav-scroller__item {
-    color:#050505 30%;
-      display: flex;
-      padding: 0.5rem 1.25rem;
-      text-decoration: none;
-     text-align:left;
-    }
-    .nav-scroller__item:not(:last-child) {
-      border-right: 1px solid #eee;
-    }
-    .nav-scroller__item_active {
-      background-color:#9BB537;
-    }
-    .nav-scroller__item:not(.nav-scroller__item_active):hover {
-      background-color:#9BB537;
-    }
-    /* для активного пункта */
-    .nav-scroller__item_active:hover {
-      background-color: #fff176;
-    }
-
-    .picture{
-      width:250px;
-      height:287px;
-      border-radius:8px;
-     object-fit:cover;
-    }
-    .pictures-gallery{
-    
-      display:flex;
-      width:auto;
-      height:auto;
-      column-gap: 16px;
-      row-gap:32px;
-      list-style:none;
-      /* margin-left:64px; */
-      /* margin-top:75px; */
-      /*align-items:flex-end;*/
-      flex-wrap:wrap;
-    }
-}
 @media screen and (min-width: 768px) {
   .section-elements{
     display:flex;
@@ -417,10 +325,10 @@ color: var(--var-grey-menu);
 
     .picture{
 
-      width:250px;
-      height:287px;
+      width: 240px;
+      height: 264px;
       border-radius:8px;
-     object-fit:cover;
+      object-fit:cover;
     }
     .pictures-gallery{
      
@@ -436,20 +344,21 @@ color: var(--var-grey-menu);
       flex-wrap:wrap;
     }
 }
+
+/* *********************************************************************8 */
+
 @media screen and (min-width: 1280px) {
   .section-elements{
     display:flex;
     margin-right: 120px;
     margin-bottom:42px; 
     list-style:none;
-   /* min-width:1250px; */
-   }
-   .photos{
+  }
+  .photos{
     display:flex;
     list-style:none;
-    }
-    .all-categories{
-
+  }
+  .all-categories{
     display:flex;
     width:176px;
     height:50px;
@@ -462,16 +371,14 @@ color: var(--var-grey-menu);
     font-size:18px;
     line-height: 1.21;
     border-radius: 15px;
-
-    }
-    
-    .nav-scroller{
+  }
+  .nav-scroller{
     overflow-y: auto;
     background-color: #fff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width:235px;
     height:416px;
-       margin-bottom: 64px;
+    margin-bottom: 64px;
     /* margin-left:75px; */
     gap:58px;
     font-family:Inter;
@@ -479,17 +386,15 @@ color: var(--var-grey-menu);
     font-size:16px;
     line-height: 20px;
     color:#050505 50%;
-    
-    }
-    
-    .nav-scroller__item {
+  }
+  .nav-scroller__item {
     color:#050505 30%;
-      display: flex;
-      padding: 0.5rem 1.25rem;
-      text-decoration: none;
-     text-align:left;
-    }
-    .nav-scroller__item:not(:last-child) {
+    display: flex;
+    padding: 0.5rem 1.25rem;
+    text-decoration: none;
+    text-align:left;
+  }
+  .nav-scroller__item:not(:last-child) {
       border-right: 1px solid #eee;
     }
     .nav-scroller__item_active {
@@ -739,7 +644,7 @@ color: var(--var-grey-menu);
   align-items: center;
   justify-content: center;
 }
-​
+
     /*.icon::before {
       font-family: 'Font Awesome\ 5 Free';
       content: '&#xf08a';
