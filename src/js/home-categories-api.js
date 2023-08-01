@@ -42,7 +42,16 @@ const plugCover = document.querySelector('.plug');
 
 const chapter = document.querySelector('.section-elements');
 
-perPage = 9;
+function setLimitDownloadValue() {
+  if (window.innerWidth < 768) {
+    perPage = 6;
+  } else if (window.innerWidth < 1280) {
+    perPage = 8;
+  } else {
+    perPage = 9;
+  }
+}
+setLimitDownloadValue();
 
 stop = perPage;
 
