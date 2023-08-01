@@ -8,8 +8,6 @@ import 'tui-pagination/dist/tui-pagination.css';
 
 let url;
 
-let stop;
-
 let searchParam;
 
 let pictures = [];
@@ -30,7 +28,7 @@ let period;
 
 let sort;
 
-let perPage;
+let perPage = 0;
 
 const recipes = document.querySelector('.nav-scroller');
 
@@ -42,6 +40,8 @@ const plugCover = document.querySelector('.plug');
 
 const chapter = document.querySelector('.section-elements');
 
+// stop = perPage;
+
 function setLimitDownloadValue() {
   if (window.innerWidth < 768) {
     perPage = 6;
@@ -52,8 +52,6 @@ function setLimitDownloadValue() {
   }
 }
 setLimitDownloadValue();
-
-stop = perPage;
 
 period = 0;
 
@@ -188,10 +186,10 @@ function renderCardsList(foods) {
   instance.on('afterMove', event => {
     loadPage = event.page;
 
-    if (loadPage * stop >= foods.totalPages) {
-      perPage = foods.totalPages % ((loadPage - 1) * stop);
+    if (loadPage * perPage >= foods.totalPages) {
+      perPage = foods.totalPages % ((loadPage - 1) * perPage);
     }
-    if (loadPage > Number.parseInt(foods.totalPages % stop) + 1) {
+    if (loadPage > Number.parseInt(foods.totalPages % perPage) + 1) {
       return;
     }
 
@@ -208,7 +206,7 @@ function renderCardsList(foods) {
       });
   });
 
-  perPage = stop;
+  // perPage = stop;
 }
 
 const base_url =
