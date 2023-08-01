@@ -113,7 +113,7 @@ function renderCardsList(foods) {
       if (modal[i].checked) {
         evt.target.classList.toggle('change-color');
         console.log(i);
-        localStorage.setItem('favorites', JSON.stringifypictures[i]);
+        localStorage.setItem('favorites', JSON.stringify[i]);
       } else {
         for (let j = 0; j < favorites.length; j = +1) {
           if (favorites[j] === pictures[i]) {
