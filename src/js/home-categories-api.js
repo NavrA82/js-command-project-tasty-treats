@@ -27,8 +27,10 @@ setLimitDownloadValue();
 function renderCardsList(foods) {
   const markup = foods.results
     .map(result => {
+      const roundedRating = result.rating.toFixed(1);
+
       const stars = Array.from({ length: 5 }, (_, index) => {
-        return index < Math.floor(result.rating)
+        return index < Math.floor(roundedRating)
           ? '<span class="fa fa-star checked"></span>'
           : '<span class="fa fa-star star_color"></span>';
       }).join('');
@@ -40,7 +42,7 @@ function renderCardsList(foods) {
           <p class="recipe-description">${result.description}</p>
           <div class="photo-card-wrap-stars-button">
             <div class="photo-card-wrap-rating-stars">
-              <p class="recipe_rating">${result.rating}</p>
+              <p class="recipe_rating">${roundedRating}</p>
               <div class="all-stars">${stars}</div>
             </div>
             <button type="button" class="good-recipes">See recipe</button>
@@ -484,7 +486,7 @@ loadFavoritesFromLocalStorage();
 //     });
 // });
 
-// /*function initRatings(){
+// function initRatings(){
 //   let ratingActive, ratingValue;
 //   for (let index=0; index<ratings.length; index++){
 //       const rating=ratings[index];
@@ -505,4 +507,4 @@ loadFavoritesFromLocalStorage();
 //       const ratingActiveWidth = index/0.05;
 //       ratingActive.style.width=`${ratingActiveWidth}%`;
 //   }
-// }*/
+// }
