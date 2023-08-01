@@ -11,15 +11,22 @@ extra-filters-search-icon-close-light - на свг в  searchResetBtnInputExtra
 .dark-extra-filters-form-select - на форму селекту в timeExtraFiltersForm , areaExtraFiltersForm та ingredientsExtraFiltersForm . темна тема
 .light-extra-filters-form-select - на форму селекту в timeExtraFiltersForm , areaExtraFiltersForm та ingredientsExtraFiltersForm . світла тема
 */
-@import url('./main.css');
 
+.extra-filters-form-input:hover {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+
+.extra-filters-form-input:focus {
+  outline: none;
+}
 svg {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.extra-filters-reset-btn-wrap{
+.extra-filters-reset-btn-wrap {
   display: flex;
   justify-content: end;
   margin-top: 14px;
@@ -40,7 +47,6 @@ svg {
   flex-direction: column;
   color: var(--var-grey);
 }
-
 
 .extra-filters-form-label {
   display: flex;
@@ -200,13 +206,11 @@ option:is(:hover, :focus) {
   flex-direction: column;
 }
 @media screen and (max-width: 767px) {
-  .extra-filters-form{
+  .extra-filters-form {
     gap: 14px;
   }
 }
 @media screen and (min-width: 768px) {
-
-
   .extra-filters-form {
     gap: 16px;
     /* width: 544px; */
@@ -254,8 +258,6 @@ option:is(:hover, :focus) {
 }
 
 @media screen and (min-width: 1280px) {
-
-
   .extra-filters-form-wrap {
     width: 782px;
   }

@@ -8,6 +8,10 @@ body.show-modal-order-now .order-now-backdrop {
   pointer-events: initial;
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--var-background) inset;
+  -webkit-text-fill-color: var(--var-text);
+}
 .order-now-backdrop {
   position: fixed;
   top: 0;

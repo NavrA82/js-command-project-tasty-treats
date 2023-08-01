@@ -35,12 +35,18 @@ function renderCardsList(foods) {
 
       return `<li>
       <div class="photo-card">
+        <div class="photo-card-wrap-descr">
+          <h2 class="card-title">${result.title}</h2>
+          <p class="recipe-description">${result.description}</p>
+          <div class="photo-card-wrap-stars-button">
+            <div class="photo-card-wrap-rating-stars">
+              <p class="recipe_rating">${result.rating}</p>
+              <div class="all-stars">${stars}</div>
+            </div>
+            <button type="button" class="good-recipes">See recipe</button>
+          </div>
+        </div>
         <img class="picture" src=${result.preview} alt=${result.tags[0]} loading="lazy" />
-        <h2 class="card-title">${result.title}</h2>
-        <p class="recipe-description">${result.description}</p>
-        <p class="recipe_rating">${result.rating}</p>
-        <div class="all-stars">${stars}</div>
-        <button type="button" class="good-recipes">See recipe</button>
         <label class="label-check">
           <input class="modal-check" type="checkbox" data-id="${result._id}" /> <!-- Add data-id="${result._id}" -->
           <i class="fa fa-heart"></i>
