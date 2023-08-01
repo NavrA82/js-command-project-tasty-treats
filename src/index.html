@@ -26,6 +26,7 @@
   </head>
   <body>
     <!-- -----------------------HEDER------------------------------------------ -->
+    <!-- ***********Анастасія Щербула Scrum-мастер, HEDER**************** -->
     <include src="./partials/header.html"></include>
 
     <main>
@@ -36,7 +37,19 @@
       <section class="favorete">
         <div class="container">
           <div class="cards-filter">
-            <include src="./partials/categories.html"></include>
+            <section class="home-categories">
+              <ul class="photos">
+                <li class="eside bar">
+                  <include src="./partials/categories.html"></include>
+
+                  <include src="./partials/popular-recipes.html"></include>
+                </li>
+                <li>
+                  <include src="./partials/extrafilters.html"></include>
+                  <include src="./partials/categoris-gallery.html"></include>
+                </li>
+              </ul>
+            </section>
           </div>
         </div>
       </section>

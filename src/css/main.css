@@ -56,10 +56,10 @@ p {
   margin: 0;
   padding: 0;
 }
-svg {
+/* svg {
   fill: currentColor;
   stroke: currentColor;
-}
+} */
 .container {
   margin: 0 auto;
   outline: 2px solid tomato;
@@ -68,7 +68,6 @@ svg {
   display: flex;
   gap: 32px;
 } */
-
 
 @media screen and (max-width: 767px) {
   .container {

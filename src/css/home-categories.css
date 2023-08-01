@@ -136,7 +136,7 @@
   top: 16px;
   right: 16px;
   border: none;
-  background: #f8f8f8;
+  background: none;
   cursor: pointer;
 }
 
@@ -625,18 +625,6 @@
       content: '&#xf08a';
       font-weight: 900;
     }*/
-     .change-color {
-      font:FontAwesome;
-     color:red;
-     }
-     .checked {
-      /* font:FontAwesome; */
-      color: #EEA10C;
-    }
-    .star_color{
-      font:FontAwesome;
-      color: #F8F8F8;
-    }
     .photo-card .recipe_rating{
       position:absolute;
       display:flex;
