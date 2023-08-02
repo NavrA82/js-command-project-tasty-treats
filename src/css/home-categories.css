@@ -122,14 +122,22 @@
 .good-recipes:is(:hover, :focus) {
   color: #050505;
 }
-.label-check,
-.label-check-icon-heart {
+.label-check {
   position: absolute;
   top: 16px;
   right: 16px;
   border: none;
   background: none;
   cursor: pointer;
+}
+.label-check-icon-heart {
+  position: absolute;
+  top: 40px;
+  right: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 2;
 }
 .modal-check {
   position: fixed;

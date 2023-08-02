@@ -51,6 +51,9 @@ function renderCardsList(foods) {
         <img class="picture" src=${result.preview} alt=${result.tags[0]} loading="lazy" />
         <label class="label-check">
           <input class="modal-check" type="checkbox" data-id="${result._id}" /> <!-- Add data-id="${result._id}" -->
+          <svg class="label-check-icon-heart">
+            <use href="./images/sprite/icons.svg#icon-heart"></use>
+          </svg>
           <i class="fa fa-heart"></i>
         </label>
       </div>
