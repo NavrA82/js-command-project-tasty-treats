@@ -34,6 +34,7 @@
   border: 1px solid var(--var-grey-menu);
   color: var(--var-grey-menu);
 }
+
 /* ====================================================================================== */
 .photo-card {
   position: relative;
@@ -72,7 +73,6 @@
 }
 
 .recipe-description {
-  /* display: flex; */
   height: 32px;
   font-family: 'Inter';
   font-style: normal;
@@ -99,7 +99,6 @@
 .photo-card-wrap-rating-stars {
   display: flex;
   column-gap: 4px;
-  /* justify-content: space-between; */
 }
 .all-stars {
   display: flex;
@@ -107,6 +106,21 @@
   width: 90px;
   height: 18px;
 }
+/* Стилі для зірочки */
+.all-stars .fa-star {
+  color: #f8f8f8;
+}
+
+.all-stars .checked {
+  color: #eea10c;
+}
+.all-stars .star-icon {
+  color: #f8f8f8;
+}
+.all-stars .checked {
+  color: #eea10c;
+}
+
 .good-recipes {
   padding: 8px 16px;
   border-radius: 8px;
@@ -125,42 +139,31 @@
 }
 .label-check {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-.label-check-icon-heart {
-  position: absolute;
   top: 16px;
   right: 16px;
   border: none;
   background: none;
   cursor: pointer;
-  z-index: 2;
 }
-.icon-heart {
+
+.label-check-icon-heart {
   width: 22px;
   height: 22px;
 }
 .modal-check {
   position: fixed;
-  z-index: -2;
+  z-index: 2;
   opacity: 0;
 }
 .change-color {
-  /* font:FontAwesome; */
   color: #f8f8f8;
   background-color: none;
 }
 .checked {
-  /* font:FontAwesome; */
   color: #eea10c;
   background-color: none;
 }
 .star_color {
-  /* font:FontAwesome; */
   color: #f8f8f8;
   background-color: none;
 }
@@ -280,8 +283,6 @@
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  /*margin-top:64px;*/
-  /*margin-bottom:40px;*/
 }
 
 .section-elements > .plug {
@@ -496,7 +497,6 @@
     /* color:#050505 50%; */
   }
   .nav-scroller__item {
-    /* color:#050505 30%; */
     display: flex;
     padding: 0.5rem 1.25rem;
     text-decoration: none;
@@ -511,7 +511,7 @@
   .nav-scroller__item:not(.nav-scroller__item_active):hover {
     background-color: #9bb537;
   }
-  /* для активного пункта */
+
   .nav-scroller__item_active:hover {
     background-color: #fff176;
   }
@@ -524,11 +524,6 @@
     column-gap: 16px;
     row-gap: 32px;
   }
-
-  /* .button-text {
-    display: flex;
-    padding-left: -16px;
-  } */
 
   .good-recipes {
     padding: 8px 16px;
