@@ -160,7 +160,7 @@
   width: 90px;
   height: 18px;
 }
-/* Стилі для зірочки */
+/* styles stars */
 .all-stars .fa-star {
   color: #f8f8f8;
 }
@@ -287,7 +287,6 @@
 
 /* When the checkbox is checked, add a blue background */
 .photo-card .label-check input:checked ~ i {
-  /* background-color: none; */
   color: var(--var-grey-menu);
 }
 
@@ -359,10 +358,8 @@
   }
   .section-elements {
     display: flex;
-    /* margin-right:20px; */
     margin-bottom: 20px;
     list-style: none;
-    /* min-width:320px; */
   }
 }
 /* !##################### 0px-768px ########################### */
@@ -379,11 +376,8 @@
   }
   .section-elements {
     display: flex;
-
     margin-bottom: 24px;
-    /* margin-top:108px; */
     list-style: none;
-    /* width:700px; */
   }
 
   .nav-scroller {
@@ -413,10 +407,7 @@
     column-gap: 63px;
   }
   .section-elements {
-    display: flex;
-    /* margin-right: 120px; */
     margin-bottom: 42px;
-    list-style: none;
   }
   .nav-scroller {
     width: 235px;
