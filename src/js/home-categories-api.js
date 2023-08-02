@@ -51,9 +51,24 @@ function renderCardsList(foods) {
         <img class="picture" src=${result.preview} alt=${result.tags[0]} loading="lazy" />
         <label class="label-check">
           <input class="modal-check" type="checkbox" data-id="${result._id}" /> <!-- Add data-id="${result._id}" -->
-          <svg class="label-check-icon-heart">
-            <use href="./images/sprite/icons.svg#icon-heart"></use>
-          </svg>
+          <svg
+              class="label-check-icon-heart"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M10.9944 3.70783C9.16163 1.5652 6.10542 0.988839 3.80912 2.95085C1.51282 4.91285 1.18954 8.19323 2.99283 10.5137C4.49215 12.443 9.02961 16.5121 10.5167 17.8291C10.6831 17.9764 10.7663 18.0501 10.8633 18.0791C10.948 18.1043 11.0407 18.1043 11.1254 18.0791C11.2224 18.0501 11.3056 17.9764 11.472 17.8291C12.9591 16.5121 17.4966 12.443 18.9959 10.5137C20.7992 8.19323 20.5154 4.89221 18.1796 2.95085C15.8439 1.00948 12.8271 1.5652 10.9944 3.70783Z"
+                stroke="#F8F8F8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           <i class="fa fa-heart"></i>
         </label>
       </div>
@@ -84,7 +99,35 @@ function handleFavoriteToggle(evt) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }
 }
+function handleFavoriteToggle(evt) {
+  const targetCheckbox = evt.target;
+  const isHeartIcon = targetCheckbox.classList.contains(
+    'label-check-icon-heart'
+  );
 
+  if (isHeartIcon || targetCheckbox.classList.contains('modal-check')) {
+    const pictureId = targetCheckbox.getAttribute('data-id');
+    const cardElement = targetCheckbox.closest('.photo-card');
+
+    if (isHeartIcon) {
+      const checkbox = cardElement.querySelector('.modal-check');
+      checkbox.checked = !checkbox.checked;
+    }
+
+    if (targetCheckbox.checked) {
+      cardElement.classList.add('change-color');
+      favorites.push(pictureId);
+    } else {
+      cardElement.classList.remove('change-color');
+      const index = favorites.indexOf(pictureId);
+      if (index !== -1) {
+        favorites.splice(index, 1);
+      }
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+}
 gallery.addEventListener('click', handleFavoriteToggle);
 
 function fetchDataAndRender() {

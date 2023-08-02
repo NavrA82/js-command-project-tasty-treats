@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const popularList = document.querySelector('.popular-recipes');
 
   recipesContainer.addEventListener('click', async event => {
-    const seeRecipeBtn = event.target.closest('.get-recipes');
+    const seeRecipeBtn = event.target.closest('.good-recipes');
     if (!seeRecipeBtn) return;
 
     const recipeId = seeRecipeBtn.dataset.id;

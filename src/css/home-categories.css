@@ -38,6 +38,7 @@
 .photo-card {
   position: relative;
   display: flex;
+  color: #ffffff00;
   flex-wrap: wrap;
   border-radius: 18px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
@@ -124,20 +125,24 @@
 }
 .label-check {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 0px;
+  right: 0px;
   border: none;
   background: none;
   cursor: pointer;
 }
 .label-check-icon-heart {
   position: absolute;
-  top: 40px;
+  top: 16px;
   right: 16px;
   border: none;
   background: none;
   cursor: pointer;
   z-index: 2;
+}
+.icon-heart {
+  width: 22px;
+  height: 22px;
 }
 .modal-check {
   position: fixed;
@@ -146,7 +151,7 @@
 }
 .change-color {
   /* font:FontAwesome; */
-  color: red;
+  color: #f8f8f8;
   background-color: none;
 }
 .checked {
@@ -241,7 +246,7 @@
 /* When the checkbox is checked, add a blue background */
 .photo-card .label-check input:checked ~ i {
   /* background-color: none; */
-  color: #f4f4fd;
+  color: var(--var-grey-menu);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
