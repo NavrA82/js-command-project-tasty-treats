@@ -2,7 +2,9 @@ import Notiflix from 'notiflix';
 import throttle from 'lodash/throttle';
 
 const openButtonHeroModal = document.querySelector('.btn-order');
-const closeButtonModal = document.querySelector('.order-now-modal-button-close-js');
+const closeButtonModal = document.querySelector(
+  '.order-now-modal-button-close-js'
+);
 const openHederBasketFavorite = document.querySelector('.section__button');
 const openHederBasket = document.querySelector('.section__button1');
 const backdrop = document.querySelector('.js-backdrop');
@@ -14,23 +16,18 @@ closeButtonModal.addEventListener('click', onClickModalRemove);
 backdrop.addEventListener('click', onClickBackdrop);
 formModalOrderNow.addEventListener('submit', onSubmitForm);
 
-
 formModalOrderNow.addEventListener('input', throttle(onInputForm, 500));
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 receivingLocalStorageValue();
 
-
-
 function onInputForm(evt) {
-
   const formData = {
     name: formModalOrderNow.user_name.value,
     phone: formModalOrderNow.user_phone.value,
     email: formModalOrderNow.user_email.value,
     comment: formModalOrderNow.user_comment.value,
   };
-
 
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formData));
 }
@@ -70,10 +67,18 @@ function onSubmitForm(event) {
   event.preventDefault();
 
   const formData = new FormData(formModalOrderNow);
-  const inputNameValue = document.querySelector('input[name="user_name"]').value;
-  const inputPhoneValue = document.querySelector('input[name="user_phone"]').value;
-  const inputEmailValue = document.querySelector('input[name="user_email"]').value;
-  const textareaCommentValue = document.querySelector('textarea[name="user_comment"]').value;
+  const inputNameValue = document.querySelector(
+    'input[name="user_name"]'
+  ).value;
+  const inputPhoneValue = document.querySelector(
+    'input[name="user_phone"]'
+  ).value;
+  const inputEmailValue = document.querySelector(
+    'input[name="user_email"]'
+  ).value;
+  const textareaCommentValue = document.querySelector(
+    'textarea[name="user_comment"]'
+  ).value;
 
   const dataToSend = {
     user_name: inputNameValue,
@@ -93,7 +98,6 @@ function onSubmitForm(event) {
   })
     .then(response => response.json())
     .then(data => {
-
       Notiflix.Report.success(
         'Your data flew to the server',
         'if you sent valid information, wait for our call',
@@ -117,7 +121,7 @@ function onSubmitForm(event) {
       );
     })
     .catch(error => {
-      console.error('Помилка при відправці даних на бекенд:', error);
+      // console.error('Помилка при відправці даних на бекенд:', error);
       Notiflix.Report.warning(
         'THE MUSCOVITES BROKE IT ALL',
         'but the Muscovites cannot defeat the Ukrainians. We believe in Ukrainian defenders',

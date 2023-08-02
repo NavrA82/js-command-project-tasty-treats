@@ -122,7 +122,8 @@
 .good-recipes:is(:hover, :focus) {
   color: #050505;
 }
-.label-check {
+.label-check,
+.label-check-icon-heart {
   position: absolute;
   top: 16px;
   right: 16px;
