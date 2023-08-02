@@ -3,16 +3,13 @@
   visibility: hidden;
   pointer-events: none;
 }
-.modal-check {
-  position: fixed;
-  z-index: -2;
-  opacity: 0;
-}
-.eside {
+
+.sidebar {
   padding-top: 24px;
   background-color: var(--var-background);
   color: var(--var-text);
 }
+
 .nav-scroller::-webkit-scrollbar {
   width: 8px;
   height: 201px;
@@ -20,9 +17,6 @@
   background: var(--var-grey-scrollbar);
 }
 
-.eside-bar-categories {
-  padding-top: 24px;
-}
 .nav-scroller__item {
   background-color: var(--var-background);
   color: var(--var-grey-menu);
@@ -31,18 +25,20 @@
   margin-top: 14px;
   background-color: var(--var-background);
   display: flex;
+  flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 32px;
-  flex-wrap: wrap;
 }
 .all-categories {
   background-color: var(--var-background);
   border: 1px solid var(--var-grey-menu);
   color: var(--var-grey-menu);
 }
-
+/* ====================================================================================== */
 .photo-card {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 18px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -50,12 +46,9 @@
 
 .photo-card-wrap-descr {
   position: absolute;
-  /* display: flex;
-  flex-direction: column; */
   right: 16px;
   bottom: 16px;
-  width: 218px;
-  /* row-gap: 8px; */
+  width: 303px;
   z-index: 2;
 }
 .picture {
@@ -78,7 +71,7 @@
 }
 
 .recipe-description {
-  display: flex;
+  /* display: flex; */
   height: 32px;
   font-family: 'Inter';
   font-style: normal;
@@ -133,7 +126,11 @@
   background: none;
   cursor: pointer;
 }
-
+.modal-check {
+  position: fixed;
+  z-index: -2;
+  opacity: 0;
+}
 .change-color {
   /* font:FontAwesome; */
   color: red;
@@ -170,12 +167,127 @@
   column-gap: 63px;
   background-color: var(--var-background);
 }
+
+.rating_body {
+  position: relative;
+}
+
+.rating_body::before {
+  content: '★★★★★';
+  display: block;
+}
+.rating_items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.rating_active {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  top: 0;
+}
+.rating_active::before {
+  content: '★★★★★';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  color: red;
+}
+
+.rating_value {
+  font-size: 100%;
+}
+
+/* Hide the browser's default checkbox */
+.photo-card .label-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.photo-card i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: var(--primary-white-color);
+  border: 1px black solid;
+  fill: var(--primary-white-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.photo-card .label-check input:checked ~ i {
+  /* background-color: none; */
+  color: #f4f4fd;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.photo-card i::after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+​
+/* Show the checkmark when checked */
+.photo-card .label-check input:checked ~ i::after {
+  display: block;
+}
+​
+/* Style the checkmark/indicator */
+.photo-card .label-check i::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon::before {
+  font-family: 'Font Awesome\ 5 Free';
+  content: '&#xf08a';
+  font-weight: 900;
+}
+
+.pagination-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  /*margin-top:64px;*/
+  /*margin-bottom:40px;*/
+}
+
+.section-elements > .plug {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-plug {
+  display: flex;
+  width: 97px;
+  height: 83px;
+}
+.plug-text {
+  display: flex;
+  width: 240px;
+  height: 72px;
+  margin-top: 32px;
+}
 /*!##################### 0px-767px ########################### */
 
 @media screen and (max-width: 767px) {
-  .photo-card-wrap-descr {
-    width: 303px;
-  }
   .photos {
     flex-wrap: wrap;
   }
@@ -207,12 +319,9 @@
 
   .nav-scroller {
     margin-bottom: 64px;
-    /* overflow-y: none; */
-    /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
     width: 326px;
     height: 198px;
     background-color: var(--var-background);
-    /* gap:58px; */
     font-family: Inter;
     font-weight: 500;
     font-size: 16px;
@@ -220,7 +329,6 @@
   }
 
   .nav-scroller__item {
-    /* color:#050505 30%; */
     display: flex;
     padding: 0.5rem 1.25rem;
     text-decoration: none;
@@ -282,21 +390,18 @@
   .nav-scroller {
     /* overflow-y: auto; */
     background-color: #fff;
-    /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
+
     width: 176px;
     height: 416px;
     margin-bottom: 64px;
-    /* margin-right: 32px; */
     gap: 58px;
     font-family: Inter;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    /* color:#050505 50%; */
   }
 
   .nav-scroller__item {
-    /* color:#050505 30%; */
     display: flex;
     padding: 0.5rem 1.25rem;
     text-decoration: none;
@@ -402,130 +507,12 @@
     row-gap: 32px;
   }
 
-  .button-text {
+  /* .button-text {
     display: flex;
     padding-left: -16px;
-  }
+  } */
 
   .good-recipes {
     padding: 8px 16px;
-  }
-
-  .rating_body {
-    position: relative;
-  }
-
-  .rating_body::before {
-    content: '★★★★★';
-    display: block;
-  }
-  .rating_items {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-
-  .rating_active {
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    overflow: hidden;
-    top: 0;
-  }
-  .rating_active::before {
-    content: '★★★★★';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    color: red;
-  }
-
-  .rating_value {
-    font-size: 100%;
-  }
-
-  /* Hide the browser's default checkbox */
-  .photo-card .label-check input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  /* Create a custom checkbox */
-  /*.photo-card i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
-  background-color: var(--primary-white-color);
-  border: 1px black solid;
-  fill: var(--primary-white-color);
-}*/
-
-  /* When the checkbox is checked, add a blue background */
-  .photo-card .label-check input:checked ~ i {
-    /* background-color: none; */
-    color: #f4f4fd;
-  }
-
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .photo-card i::after {
-    content: '';
-    position: absolute;
-    display: none;
-  }
-  ​
-/* Show the checkmark when checked */
-.photo-card .label-check input:checked ~ i::after {
-    display: block;
-  }
-  ​
-/* Style the checkmark/indicator */
-.photo-card .label-check i::after {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /*.icon::before {
-      font-family: 'Font Awesome\ 5 Free';
-      content: '&#xf08a';
-      font-weight: 900;
-    }*/
-
-  .pagination-wrapper {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    /*margin-top:64px;*/
-    /*margin-bottom:40px;*/
-  }
-
-  .section-elements > .plug {
-    display: flex;
-    width: auto;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .icon-plug {
-    display: flex;
-    width: 97px;
-    height: 83px;
-  }
-  .plug-text {
-    display: flex;
-    width: 240px;
-    height: 72px;
-    margin-top: 32px;
   }
 }
